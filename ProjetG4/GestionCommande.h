@@ -78,27 +78,29 @@ namespace ProjetG4 {
 			// 
 			// button1
 			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(41, 40);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &GestionCommande::button1_Click);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(525, 72);
+			this->dataGridView1->Location = System::Drawing::Point(418, 61);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(368, 238);
+			this->dataGridView1->Size = System::Drawing::Size(475, 285);
 			this->dataGridView1->TabIndex = 22;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(153, 88);
+			this->textBox1->Location = System::Drawing::Point(145, 177);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(210, 22);
 			this->textBox1->TabIndex = 20;
@@ -106,7 +108,7 @@ namespace ProjetG4 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(53, 88);
+			this->label1->Location = System::Drawing::Point(48, 177);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(62, 17);
 			this->label1->TabIndex = 18;
@@ -165,7 +167,7 @@ namespace ProjetG4 {
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionCommande";
-			this->Text = L"GestionCommande";
+			this->Text = L"Gestion Commande";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
