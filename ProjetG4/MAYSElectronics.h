@@ -70,7 +70,7 @@ namespace ProjetG4 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(686, 375);
+			this->button1->Location = System::Drawing::Point(724, 372);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(160, 54);
 			this->button1->TabIndex = 0;
@@ -80,7 +80,7 @@ namespace ProjetG4 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(517, 375);
+			this->button2->Location = System::Drawing::Point(539, 372);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(129, 54);
 			this->button2->TabIndex = 1;
@@ -90,7 +90,7 @@ namespace ProjetG4 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(344, 378);
+			this->button3->Location = System::Drawing::Point(354, 372);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(139, 54);
 			this->button3->TabIndex = 2;
@@ -100,7 +100,7 @@ namespace ProjetG4 {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(185, 372);
+			this->button4->Location = System::Drawing::Point(202, 369);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(110, 60);
 			this->button4->TabIndex = 3;
@@ -114,7 +114,7 @@ namespace ProjetG4 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Agency FB", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(79, 71);
+			this->label1->Location = System::Drawing::Point(84, 77);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(767, 72);
 			this->label1->TabIndex = 4;
@@ -123,7 +123,7 @@ namespace ProjetG4 {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(28, 372);
+			this->button5->Location = System::Drawing::Point(38, 366);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(121, 60);
 			this->button5->TabIndex = 5;

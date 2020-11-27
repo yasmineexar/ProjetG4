@@ -83,7 +83,7 @@ namespace ProjetG4 {
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionStatistique";
-			this->Text = L"GestionStatistique";
+			this->Text = L"Gestion Statistique";
 			this->Load += gcnew System::EventHandler(this, &GestionStatistique::GestionStatistique_Load);
 			this->ResumeLayout(false);
 
