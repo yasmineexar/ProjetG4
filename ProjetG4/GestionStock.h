@@ -15,6 +15,7 @@ namespace ProjetG4 {
 	public ref class GestionStock : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ retour4;
 		GestionStock(void)
 		{
 			InitializeComponent();
@@ -22,6 +23,15 @@ namespace ProjetG4 {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		GestionStock(Form^ r4)
+		{
+			retour4 = r4;
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
+
 
 	protected:
 		/// <summary>
@@ -34,6 +44,8 @@ namespace ProjetG4 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,7 +60,18 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(742, 96);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GestionStock::button1_Click);
 			// 
 			// GestionStock
 			// 
@@ -56,6 +79,7 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->button1);
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionStock";
@@ -66,6 +90,10 @@ namespace ProjetG4 {
 		}
 #pragma endregion
 	private: System::Void GestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		retour4->Show();
 	}
 	};
 }

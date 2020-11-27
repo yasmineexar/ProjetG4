@@ -70,61 +70,64 @@ namespace ProjetG4 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(604, 359);
+			this->button1->Location = System::Drawing::Point(686, 375);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(160, 54);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"PERSONNEL";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MAYSElectronics::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(455, 359);
+			this->button2->Location = System::Drawing::Point(517, 375);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(129, 54);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
+			this->button2->Text = L"CLIENT";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MAYSElectronics::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(300, 362);
+			this->button3->Location = System::Drawing::Point(344, 378);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(139, 54);
 			this->button3->TabIndex = 2;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"COMMANDE";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MAYSElectronics::button3_Click);
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(175, 359);
+			this->button4->Location = System::Drawing::Point(185, 372);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(110, 60);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"STOCK";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MAYSElectronics::button4_Click);
 			// 
 			// label1
 			// 
+			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(41, 45);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Agency FB", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(79, 71);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 17);
+			this->label1->Size = System::Drawing::Size(767, 72);
 			this->label1->TabIndex = 4;
-			this->label1->Text = L"label1";
+			this->label1->Text = L"BIENVENU CHEZ MAYS ELECTRONICS";
 			this->label1->Click += gcnew System::EventHandler(this, &MAYSElectronics::label1_Click);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(33, 359);
+			this->button5->Location = System::Drawing::Point(28, 372);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(121, 60);
 			this->button5->TabIndex = 5;
-			this->button5->Text = L"button5";
+			this->button5->Text = L"STATISTIQUE";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MAYSElectronics::button5_Click);
 			// 
@@ -157,12 +160,24 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	page->ShowDialog();
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionClient^ page = gcnew GestionClient(this);
+	this->Hide();
+	page->ShowDialog();
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionCommande^ page = gcnew GestionCommande(this);
+	this->Hide();
+	page->ShowDialog();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionStock^ page = gcnew GestionStock(this);
+	this->Hide();
+	page->ShowDialog();
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionStatistique^ page = gcnew GestionStatistique(this);
+	this->Hide();
+	page->ShowDialog();
 }
 private: System::Void MAYSElectronics_Load(System::Object^ sender, System::EventArgs^ e) {
 }

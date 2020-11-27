@@ -15,6 +15,7 @@ namespace ProjetG4 {
 	public ref class GestionCommande : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ retour3;
 		GestionCommande(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,14 @@ namespace ProjetG4 {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+		GestionCommande(Form^ r3)
+		{
+			retour3 = r3;
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -34,6 +42,8 @@ namespace ProjetG4 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,13 +58,25 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(578, 149);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GestionCommande::button1_Click);
 			// 
 			// GestionCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->button1);
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionCommande";
@@ -63,5 +85,9 @@ namespace ProjetG4 {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		retour3->Show();
+	}
 	};
 }
