@@ -54,7 +54,9 @@ namespace ProjetG4 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(282, 253);
+			this->ClientSize = System::Drawing::Size(955, 529);
+			this->MaximumSize = System::Drawing::Size(973, 576);
+			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionClient";
 			this->Text = L"GestionClient";
 			this->Load += gcnew System::EventHandler(this, &GestionClient::GestionClient_Load);

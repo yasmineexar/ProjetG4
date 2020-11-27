@@ -48,12 +48,23 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"GestionStatistique";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// GestionStatistique
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(955, 529);
+			this->MaximumSize = System::Drawing::Size(973, 576);
+			this->MinimumSize = System::Drawing::Size(973, 576);
+			this->Name = L"GestionStatistique";
+			this->Text = L"GestionStatistique";
+			this->Load += gcnew System::EventHandler(this, &GestionStatistique::GestionStatistique_Load);
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void GestionStatistique_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

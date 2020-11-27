@@ -17,10 +17,10 @@ namespace ProjetG4 {
 	/// <summary>
 	/// Description résumée de MYASElectronics
 	/// </summary>
-	public ref class MYASElectronics : public System::Windows::Forms::Form
+	public ref class MAYSElectronics : public System::Windows::Forms::Form
 	{
 	public:
-		MYASElectronics(void)
+		MAYSElectronics(void)
 		{
 			InitializeComponent();
 			//
@@ -32,7 +32,7 @@ namespace ProjetG4 {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~MYASElectronics()
+		~MAYSElectronics()
 		{
 			if (components)
 			{
@@ -76,7 +76,7 @@ namespace ProjetG4 {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MYASElectronics::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MAYSElectronics::button1_Click);
 			// 
 			// button2
 			// 
@@ -86,7 +86,7 @@ namespace ProjetG4 {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MYASElectronics::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &MAYSElectronics::button2_Click);
 			// 
 			// button3
 			// 
@@ -96,7 +96,7 @@ namespace ProjetG4 {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MYASElectronics::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &MAYSElectronics::button3_Click);
 			// 
 			// button4
 			// 
@@ -106,7 +106,7 @@ namespace ProjetG4 {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"button4";
 			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &MYASElectronics::button4_Click);
+			this->button4->Click += gcnew System::EventHandler(this, &MAYSElectronics::button4_Click);
 			// 
 			// label1
 			// 
@@ -116,7 +116,7 @@ namespace ProjetG4 {
 			this->label1->Size = System::Drawing::Size(46, 17);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"label1";
-			this->label1->Click += gcnew System::EventHandler(this, &MYASElectronics::label1_Click);
+			this->label1->Click += gcnew System::EventHandler(this, &MAYSElectronics::label1_Click);
 			// 
 			// button5
 			// 
@@ -126,23 +126,24 @@ namespace ProjetG4 {
 			this->button5->TabIndex = 5;
 			this->button5->Text = L"button5";
 			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &MYASElectronics::button5_Click);
+			this->button5->Click += gcnew System::EventHandler(this, &MAYSElectronics::button5_Click);
 			// 
-			// MYASElectronics
+			// MAYSElectronics
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(787, 474);
+			this->ClientSize = System::Drawing::Size(955, 529);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->MaximumSize = System::Drawing::Size(805, 521);
-			this->MinimumSize = System::Drawing::Size(805, 521);
-			this->Name = L"MYASElectronics";
-			this->Text = L"MYASElectronics";
+			this->MaximumSize = System::Drawing::Size(973, 576);
+			this->MinimumSize = System::Drawing::Size(973, 576);
+			this->Name = L"MAYSElectronics";
+			this->Text = L"MAYSElectronics";
+			this->Load += gcnew System::EventHandler(this, &MAYSElectronics::MAYSElectronics_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -151,15 +152,19 @@ namespace ProjetG4 {
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	GestionPersonnel^ page = gcnew GestionPersonnel(this);
+	this->Hide();
+	page->ShowDialog();
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MAYSElectronics_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

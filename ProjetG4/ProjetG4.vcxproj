@@ -125,7 +125,7 @@
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="GestionStatistique.cpp" />
     <ClCompile Include="GestionStock.cpp" />
-    <ClCompile Include="MYASElectronics.cpp" />
+    <ClCompile Include="MAYSElectronics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GestionClient.h">
@@ -143,7 +143,7 @@
     <ClInclude Include="GestionStock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MYASElectronics.h">
+    <ClInclude Include="MAYSElectronics.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -151,8 +151,20 @@
     <EmbeddedResource Include="GestionClient.resx">
       <DependentUpon>GestionClient.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MYASElectronics.resx">
-      <DependentUpon>MYASElectronics.h</DependentUpon>
+    <EmbeddedResource Include="GestionCommande.resx">
+      <DependentUpon>GestionCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPersonnel.resx">
+      <DependentUpon>GestionPersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionStatistique.resx">
+      <DependentUpon>GestionStatistique.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionStock.resx">
+      <DependentUpon>GestionStock.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAYSElectronics.resx">
+      <DependentUpon>MAYSElectronics.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
