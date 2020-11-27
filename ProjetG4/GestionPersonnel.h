@@ -95,7 +95,7 @@ namespace ProjetG4 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(514, 372);
+			this->button3->Location = System::Drawing::Point(505, 372);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(151, 68);
 			this->button3->TabIndex = 2;
@@ -105,7 +105,7 @@ namespace ProjetG4 {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(301, 372);
+			this->button4->Location = System::Drawing::Point(272, 372);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(157, 68);
 			this->button4->TabIndex = 3;
@@ -115,7 +115,7 @@ namespace ProjetG4 {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(92, 372);
+			this->button5->Location = System::Drawing::Point(59, 372);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(160, 68);
 			this->button5->TabIndex = 4;
@@ -126,7 +126,7 @@ namespace ProjetG4 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(56, 74);
+			this->label1->Location = System::Drawing::Point(56, 95);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(37, 17);
 			this->label1->TabIndex = 5;
@@ -135,7 +135,7 @@ namespace ProjetG4 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(56, 134);
+			this->label2->Location = System::Drawing::Point(56, 195);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(57, 17);
 			this->label2->TabIndex = 6;
@@ -143,27 +143,29 @@ namespace ProjetG4 {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(156, 74);
+			this->textBox1->Location = System::Drawing::Point(147, 95);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(210, 22);
 			this->textBox1->TabIndex = 7;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(156, 134);
+			this->textBox2->Location = System::Drawing::Point(147, 190);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(210, 22);
 			this->textBox2->TabIndex = 8;
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(538, 74);
+			this->dataGridView1->Location = System::Drawing::Point(505, 95);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(344, 251);
 			this->dataGridView1->TabIndex = 9;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnel::dataGridView1_CellContentClick);
 			// 
 			// button1
 			// 
@@ -202,17 +204,24 @@ namespace ProjetG4 {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//bouton retour
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		retour->Show();
-	}
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+}
+	   //bouton creer
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   //bouton modifier
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	   //bouton afficher
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	   //bouton supprimer
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }

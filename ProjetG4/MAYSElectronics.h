@@ -119,7 +119,8 @@ namespace ProjetG4 {
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Agency FB", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(72, 189);
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(86, 174);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(769, 74);
 			this->label1->TabIndex = 4;

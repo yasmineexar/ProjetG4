@@ -90,12 +90,13 @@ namespace ProjetG4 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(418, 61);
+			this->dataGridView1->Location = System::Drawing::Point(418, 145);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(475, 285);
+			this->dataGridView1->Size = System::Drawing::Size(475, 79);
 			this->dataGridView1->TabIndex = 22;
 			// 
 			// textBox1

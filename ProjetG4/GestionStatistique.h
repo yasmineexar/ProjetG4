@@ -66,9 +66,9 @@ namespace ProjetG4 {
 			// button1
 			// 
 			this->button1->ForeColor = System::Drawing::SystemColors::Info;
-			this->button1->Location = System::Drawing::Point(768, 87);
+			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(137, 73);
+			this->button1->Size = System::Drawing::Size(33, 32);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;

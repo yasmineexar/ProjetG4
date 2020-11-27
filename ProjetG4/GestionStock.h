@@ -45,6 +45,10 @@ namespace ProjetG4 {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
 	protected:
 
 	private:
@@ -60,18 +64,60 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStock::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(742, 96);
+			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(38, 37);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &GestionStock::button1_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(51, 374);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(160, 68);
+			this->button5->TabIndex = 8;
+			this->button5->Text = L"Créer";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &GestionStock::button5_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(274, 374);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(157, 68);
+			this->button4->TabIndex = 7;
+			this->button4->Text = L"Modifier";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(490, 374);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(151, 68);
+			this->button3->TabIndex = 6;
+			this->button3->Text = L"Afficher";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(704, 374);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(166, 68);
+			this->button2->TabIndex = 5;
+			this->button2->Text = L"Supprimer";
+			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// GestionStock
 			// 
@@ -79,7 +125,12 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionStock";
@@ -95,5 +146,7 @@ namespace ProjetG4 {
 		this->Hide();
 		retour4->Show();
 	}
-	};
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
