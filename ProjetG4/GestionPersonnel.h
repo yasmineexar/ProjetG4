@@ -351,7 +351,7 @@ namespace ProjetG4 {
 #pragma endregion
 	//bouton retour
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
+		this->Hide(); 
 		retour->Show();
 }
 	   //bouton creer
