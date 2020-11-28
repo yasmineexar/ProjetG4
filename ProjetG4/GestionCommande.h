@@ -499,7 +499,7 @@ namespace ProjetG4 {
 			this->label11->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label11->Location = System::Drawing::Point(24, 354);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(188, 56);
+			this->label11->Size = System::Drawing::Size(170, 52);
 			this->label11->TabIndex = 68;
 			this->label11->Text = L"Date d\'enregistrement \ndu solde";
 			this->label11->Click += gcnew System::EventHandler(this, &GestionCommande::label11_Click);
@@ -526,9 +526,9 @@ namespace ProjetG4 {
 			this->label13->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label13->Location = System::Drawing::Point(505, 316);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(92, 31);
+			this->label13->Size = System::Drawing::Size(145, 31);
 			this->label13->TabIndex = 70;
-			this->label13->Text = L"Reference";
+			this->label13->Text = L"Reference article";
 			// 
 			// label14
 			// 
