@@ -50,6 +50,8 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 	private:
@@ -65,6 +67,7 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCommande::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -73,18 +76,22 @@ namespace ProjetG4 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(41, 40);
+			this->button1->Size = System::Drawing::Size(29, 25);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &GestionCommande::button1_Click);
 			// 
@@ -92,24 +99,24 @@ namespace ProjetG4 {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(418, 145);
+			this->dataGridView1->Location = System::Drawing::Point(598, 69);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(475, 79);
+			this->dataGridView1->Size = System::Drawing::Size(316, 79);
 			this->dataGridView1->TabIndex = 22;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(145, 177);
+			this->textBox1->Location = System::Drawing::Point(77, 79);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(210, 22);
+			this->textBox1->Size = System::Drawing::Size(133, 22);
 			this->textBox1->TabIndex = 20;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(48, 177);
+			this->label1->Location = System::Drawing::Point(9, 79);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(62, 17);
 			this->label1->TabIndex = 18;
@@ -152,11 +159,32 @@ namespace ProjetG4 {
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(103, 284);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(165, 55);
+			this->button6->TabIndex = 23;
+			this->button6->Text = L"Enregistrer";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &GestionCommande::button6_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(47, 16);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(167, 17);
+			this->label2->TabIndex = 24;
+			this->label2->Text = L"Retour au menu principal";
+			// 
 			// GestionCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
@@ -165,6 +193,7 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"GestionCommande";
@@ -181,5 +210,7 @@ namespace ProjetG4 {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
