@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
@@ -128,6 +129,7 @@
     <ClCompile Include="MAYSElectronics.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CL_CAD.h" />
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
