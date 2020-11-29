@@ -615,6 +615,8 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximumSize = System::Drawing::Size(1120, 763);
+			this->MinimumSize = System::Drawing::Size(1120, 763);
 			this->Name = L"GestionCommande";
 			this->Text = L"Gestion Commande";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
