@@ -1,14 +1,15 @@
 #include "CL_CAD.h"
 namespace NS_Composants
 {
-    //le constructeur
-   CL_CAD::CL_CAD(void)
+    //le constructeur par défaut
+   CL_CAD::CL_CAD()
     {
-       this->rq_sql = "RIEN";
-       this->cnx = "Data Source=DESKTOP-4VU7GUS;" + "Data Base= BDDProjetG4;" + "Integrated Security=SSPI";
-       this->CNX = gcnew SqlConnection(this->cnx);
-       this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);
-       this->CMD->CommandType = CommandType::Text;
+       this->rq_sql = "RIEN"; //initialiser la requete à RIEN
+       //les informations de connexion à la base de données: le serveur; le nom de la BDD; le type de la sécurité
+       this->cnx = "Data Source=DESKTOP-4VU7GUS;" + "Initial Catalog= BDDProjetG4;" + "Integrated Security=SSPI";
+       this->CNX = gcnew SqlConnection(this->cnx);//connexion à la BDD SQL Server
+       this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);//Initialise une nouvelle instance de la classe SqlCommand avec le texte de la requete et l'objet CNX
+       this->CMD->CommandType = CommandType::Text;//définit le type de la commande à texte
     }
 
     int CL_CAD::actionRowsID(String^ rq_sql)
@@ -17,14 +18,14 @@ namespace NS_Composants
         this->setSQL(rq_sql);
         this->CMD->CommandText = this->rq_sql;
         return id;
-    }
+    }//permet de récupérer l'ID courant
 
-    void CL_CAD::actionRows(String^)
+    void CL_CAD::actionRows(String^ rq_sql)
     {
         this->setSQL(rq_sql);
         this->CMD->CommandText = this->rq_sql;
         this->CNX->Open();
-        this->CMD->ExecuteNonQuery();
+        this->CMD->ExecuteNonQuery();//retourne le nbr de lignes affectées par la commande (rq_sql)
         this->CNX->Close();
     }
 
@@ -34,10 +35,10 @@ namespace NS_Composants
         this->DA = gcnew SqlDataAdapter(this->CMD);
         this->CMD->CommandText = this->rq_sql;
         this->DS = gcnew DataSet();
-        this->DA->Fill(this->DS, dataTableName);
+        this->DA->Fill(this->DS, dataTableName);//remplir le dataset avec la table spécifiée en exécutant la requete de commande
         return this->DS;
     }
-    void CL_CAD::setSQL(String^)
+    void CL_CAD::setSQL(String^ rq_sql)
     {
         if (rq_sql == "" || rq_sql == "RIEN")
         {
@@ -45,7 +46,7 @@ namespace NS_Composants
         }
         else
         {
-            this->rq_sql = rq_sql;
+            this->rq_sql = rq_sql;//SELECT/INSERT/UPDATE/CREATE
         }
     }
 }

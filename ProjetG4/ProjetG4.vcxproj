@@ -152,6 +152,7 @@
     <ClInclude Include="MAYSElectronics.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Pch.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GestionClient.resx">
