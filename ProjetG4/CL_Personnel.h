@@ -1,10 +1,7 @@
 #pragma once
 #include "CL_CAD.h"
 #include "CL_map_TBPersonnel.h"
-using namespace System::Data;
-using namespace System::Data::SqlClient;
-using namespace System::Xml;
-using namespace System;
+#include"Pch.h"
 namespace NS_Svc
 {
 	ref class CL_Personnel
@@ -15,9 +12,9 @@ namespace NS_Svc
 		DataSet^ ds;
 	public:
 		CL_Personnel(void);
-		DataSet^ listePersonnes(String^);
-		int ajouter(String^, String^);
-		void modifier(int, String^, String^);
+		DataSet^ listePersonnel(String^);
+		int ajouter(String^, String^, String^);
+		void modifier(int, String^, String^, String^);
 		void supprimer(int);
 	};
 }

@@ -5,16 +5,18 @@ namespace NS_Composants
 	ref class CL_map_TBPERSONNEL
 	{
 	private:
+		//colonnes de la table Personnel
 		int ID_Personnel;
 		String^ Nom_P;
 		String^ Prenom_P;
 		String^ DATE_D_embauche;
 	public:
-		CL_map_TBPERSONNEL(void);
+		CL_map_TBPERSONNEL(void);//const par défaut
 		String^ SELECT(void);
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);
+		//accesseurs
 		void setID_Personnel(int);
 		void setPrenom_P(String^);
 		void setNom_P(String^);
