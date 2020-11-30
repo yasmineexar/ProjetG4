@@ -11,7 +11,7 @@ namespace NS_Composants
        this->CMD->CommandType = CommandType::Text;
     }
 
-    int NS_Composants::CL_CAD::actionRowsID(String^ rq_sql)
+    int CL_CAD::actionRowsID(String^ rq_sql)
     {
         int id;
         this->setSQL(rq_sql);
