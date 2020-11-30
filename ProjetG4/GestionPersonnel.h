@@ -67,6 +67,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::ComponentModel::IContainer^ components;
+	private: String^ mode;
 
 	protected:
 
@@ -203,7 +204,7 @@ namespace ProjetG4 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(99, 100);
+			this->textBox1->Location = System::Drawing::Point(99, 53);
 			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(169, 28);
@@ -214,7 +215,7 @@ namespace ProjetG4 {
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(99, 147);
+			this->textBox2->Location = System::Drawing::Point(99, 100);
 			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(169, 28);
@@ -282,7 +283,7 @@ namespace ProjetG4 {
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(99, 53);
+			this->textBox3->Location = System::Drawing::Point(99, 148);
 			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(169, 28);
@@ -448,6 +449,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 	   //bouton creer
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->textBox1->Text = ""; //ID
+	this->textBox2->Text = ""; //nom
+	this->textBox3->Text = ""; //Prenom
+	this->textBox6->Text = ""; //DateDembauche
+	this->textBox5->Text = ""; //Adresse
+	this->dataGridView1->DataSource = nullptr;
+	this->dataGridView1->Columns->Add("Nom_P", "Nom_P");
+	this->dataGridView1->Columns->Add("Prenom_P", "Prenom_P");
+	this->dataGridView1->Columns->Add("DATE_D_embauche", "DATE_D_embauche");
+	this->textBox4->Text = "Veuillez saisir les renseignements avant d'enregister";
+	this->mode = "nouveau";
+
 }
 	   //bouton modifier
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
