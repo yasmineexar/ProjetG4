@@ -1,5 +1,6 @@
 #include "CL_Personnel.h"
 
+
 namespace NS_Svc
 {
 	CL_Personnel::CL_Personnel(void)
