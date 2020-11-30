@@ -65,6 +65,8 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::ComponentModel::IContainer^ components;
 
 	protected:
 
@@ -72,7 +74,7 @@ namespace ProjetG4 {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -81,6 +83,7 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionPersonnel::typeid));
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -103,7 +106,9 @@ namespace ProjetG4 {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button2
@@ -112,9 +117,10 @@ namespace ProjetG4 {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(585, 333);
+			this->button2->Location = System::Drawing::Point(439, 271);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(134, 51);
+			this->button2->Size = System::Drawing::Size(100, 41);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = false;
@@ -126,9 +132,10 @@ namespace ProjetG4 {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button3->Location = System::Drawing::Point(404, 333);
+			this->button3->Location = System::Drawing::Point(303, 271);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(134, 51);
+			this->button3->Size = System::Drawing::Size(100, 41);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Afficher";
 			this->button3->UseVisualStyleBackColor = false;
@@ -140,9 +147,10 @@ namespace ProjetG4 {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(222, 333);
+			this->button4->Location = System::Drawing::Point(168, 271);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(134, 51);
+			this->button4->Size = System::Drawing::Size(100, 41);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Modifier";
 			this->button4->UseVisualStyleBackColor = false;
@@ -154,9 +162,10 @@ namespace ProjetG4 {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button5->Location = System::Drawing::Point(41, 333);
+			this->button5->Location = System::Drawing::Point(31, 271);
+			this->button5->Margin = System::Windows::Forms::Padding(2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(134, 51);
+			this->button5->Size = System::Drawing::Size(100, 41);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Créer";
 			this->button5->UseVisualStyleBackColor = false;
@@ -169,9 +178,10 @@ namespace ProjetG4 {
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(12, 115);
+			this->label1->Location = System::Drawing::Point(29, 103);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 31);
+			this->label1->Size = System::Drawing::Size(36, 24);
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Nom";
 			// 
@@ -182,9 +192,10 @@ namespace ProjetG4 {
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(12, 173);
+			this->label2->Location = System::Drawing::Point(29, 151);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(74, 31);
+			this->label2->Size = System::Drawing::Size(56, 24);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Prenom";
 			// 
@@ -192,9 +203,10 @@ namespace ProjetG4 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(132, 112);
+			this->textBox1->Location = System::Drawing::Point(99, 100);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(224, 34);
+			this->textBox1->Size = System::Drawing::Size(169, 28);
 			this->textBox1->TabIndex = 7;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox1_TextChanged);
 			// 
@@ -202,20 +214,22 @@ namespace ProjetG4 {
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(132, 170);
+			this->textBox2->Location = System::Drawing::Point(99, 147);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(224, 34);
+			this->textBox2->Size = System::Drawing::Size(169, 28);
 			this->textBox2->TabIndex = 8;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(404, 54);
+			this->dataGridView1->Location = System::Drawing::Point(303, 53);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(494, 208);
+			this->dataGridView1->Size = System::Drawing::Size(372, 160);
 			this->dataGridView1->TabIndex = 9;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnel::dataGridView1_CellContentClick);
 			// 
@@ -226,9 +240,10 @@ namespace ProjetG4 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(12, 12);
+			this->button1->Location = System::Drawing::Point(9, 10);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(42, 44);
+			this->button1->Size = System::Drawing::Size(32, 36);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
@@ -240,9 +255,10 @@ namespace ProjetG4 {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button6->Location = System::Drawing::Point(764, 333);
+			this->button6->Location = System::Drawing::Point(573, 271);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(134, 51);
+			this->button6->Size = System::Drawing::Size(100, 41);
 			this->button6->TabIndex = 13;
 			this->button6->Text = L"Enregistrer";
 			this->button6->UseVisualStyleBackColor = false;
@@ -254,9 +270,10 @@ namespace ProjetG4 {
 			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(12, 57);
+			this->label3->Location = System::Drawing::Point(29, 56);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(30, 31);
+			this->label3->Size = System::Drawing::Size(21, 24);
 			this->label3->TabIndex = 14;
 			this->label3->Text = L"ID";
 			this->label3->Click += gcnew System::EventHandler(this, &GestionPersonnel::label3_Click);
@@ -265,9 +282,10 @@ namespace ProjetG4 {
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(132, 54);
+			this->textBox3->Location = System::Drawing::Point(99, 53);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(224, 34);
+			this->textBox3->Size = System::Drawing::Size(169, 28);
 			this->textBox3->TabIndex = 15;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox3_TextChanged);
 			// 
@@ -276,11 +294,12 @@ namespace ProjetG4 {
 			this->textBox4->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(40, 417);
+			this->textBox4->Location = System::Drawing::Point(30, 339);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox4->Size = System::Drawing::Size(679, 83);
+			this->textBox4->Size = System::Drawing::Size(510, 68);
 			this->textBox4->TabIndex = 16;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox4_TextChanged);
 			// 
@@ -289,9 +308,10 @@ namespace ProjetG4 {
 			this->textBox5->BackColor = System::Drawing::Color::White;
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(482, 275);
+			this->textBox5->Location = System::Drawing::Point(362, 228);
+			this->textBox5->Margin = System::Windows::Forms::Padding(2);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(224, 34);
+			this->textBox5->Size = System::Drawing::Size(169, 28);
 			this->textBox5->TabIndex = 18;
 			// 
 			// label4
@@ -301,9 +321,10 @@ namespace ProjetG4 {
 			this->label4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(398, 275);
+			this->label4->Location = System::Drawing::Point(298, 228);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(78, 31);
+			this->label4->Size = System::Drawing::Size(60, 24);
 			this->label4->TabIndex = 17;
 			this->label4->Text = L"Adresse";
 			// 
@@ -315,9 +336,10 @@ namespace ProjetG4 {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Agency FB", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Location = System::Drawing::Point(57, 22);
+			this->label5->Location = System::Drawing::Point(43, 18);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(50, 24);
+			this->label5->Size = System::Drawing::Size(42, 20);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"Retour";
 			// 
@@ -326,10 +348,12 @@ namespace ProjetG4 {
 			this->textBox6->BackColor = System::Drawing::Color::White;
 			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(132, 228);
+			this->textBox6->Location = System::Drawing::Point(33, 228);
+			this->textBox6->Margin = System::Windows::Forms::Padding(2);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(224, 34);
+			this->textBox6->Size = System::Drawing::Size(235, 28);
 			this->textBox6->TabIndex = 21;
+			this->textBox6->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox6_TextChanged);
 			// 
 			// label6
 			// 
@@ -338,20 +362,21 @@ namespace ProjetG4 {
 			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Location = System::Drawing::Point(12, 200);
+			this->label6->Location = System::Drawing::Point(29, 189);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(105, 62);
+			this->label6->Size = System::Drawing::Size(110, 24);
 			this->label6->TabIndex = 20;
-			this->label6->Text = L"Date \nd\'embauche";
+			this->label6->Text = L"Date d\'embauche";
 			this->label6->Click += gcnew System::EventHandler(this, &GestionPersonnel::label6_Click);
 			// 
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(778, 273);
+			this->listBox1->Location = System::Drawing::Point(584, 227);
+			this->listBox1->Margin = System::Windows::Forms::Padding(2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(120, 36);
+			this->listBox1->Size = System::Drawing::Size(91, 30);
 			this->listBox1->TabIndex = 22;
 			// 
 			// label7
@@ -361,20 +386,25 @@ namespace ProjetG4 {
 			this->label7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->label7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Location = System::Drawing::Point(728, 275);
+			this->label7->Location = System::Drawing::Point(546, 228);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(44, 31);
+			this->label7->Size = System::Drawing::Size(35, 24);
 			this->label7->TabIndex = 23;
 			this->label7->Text = L"Ville";
 			this->label7->Click += gcnew System::EventHandler(this, &GestionPersonnel::label7_Click);
 			// 
+			// bindingSource1
+			// 
+			this->bindingSource1->CurrentChanged += gcnew System::EventHandler(this, &GestionPersonnel::bindingSource1_CurrentChanged);
+			// 
 			// GestionPersonnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(955, 529);
+			this->ClientSize = System::Drawing::Size(718, 436);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->textBox6);
@@ -398,12 +428,14 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MaximumSize = System::Drawing::Size(973, 576);
-			this->MinimumSize = System::Drawing::Size(973, 576);
+			this->Margin = System::Windows::Forms::Padding(2);
+			this->MaximumSize = System::Drawing::Size(734, 475);
+			this->MinimumSize = System::Drawing::Size(734, 475);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"GestionPersonnel";
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -441,6 +473,10 @@ private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void bindingSource1_CurrentChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
