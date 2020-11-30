@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="CL_map_TBPersonnel.cpp" />
+    <ClCompile Include="CL_Personnel.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
@@ -132,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="CL_CAD.h" />
     <ClInclude Include="CL_map_TBPersonnel.h" />
+    <ClInclude Include="CL_Personnel.h" />
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>

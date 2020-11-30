@@ -162,7 +162,7 @@ namespace ProjetG4 {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button5->Location = System::Drawing::Point(31, 271);
+			this->button5->Location = System::Drawing::Point(33, 271);
 			this->button5->Margin = System::Windows::Forms::Padding(2);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(100, 41);
@@ -294,12 +294,12 @@ namespace ProjetG4 {
 			this->textBox4->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(30, 339);
+			this->textBox4->Location = System::Drawing::Point(33, 339);
 			this->textBox4->Margin = System::Windows::Forms::Padding(2);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox4->Size = System::Drawing::Size(510, 68);
+			this->textBox4->Size = System::Drawing::Size(507, 68);
 			this->textBox4->TabIndex = 16;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox4_TextChanged);
 			// 
