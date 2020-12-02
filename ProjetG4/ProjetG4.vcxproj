@@ -120,55 +120,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CL_CAD.cpp" />
-    <ClCompile Include="CL_map_TBPersonnel.cpp" />
-    <ClCompile Include="CL_Personnel.cpp" />
-    <ClCompile Include="GestionClient.cpp" />
-    <ClCompile Include="GestionCommande.cpp" />
-    <ClCompile Include="GestionPersonnel.cpp" />
-    <ClCompile Include="GestionStatistique.cpp" />
-    <ClCompile Include="GestionStock.cpp" />
+    <ClCompile Include="Adresse.cpp" />
+    <ClCompile Include="Article.cpp" />
+    <ClCompile Include="CAD.cpp" />
+    <ClCompile Include="Choisir.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="ClientForm.cpp" />
+    <ClCompile Include="CommandeForm.cpp" />
+    <ClCompile Include="PersonnelForm.cpp" />
+    <ClCompile Include="StatistiqueForm.cpp" />
+    <ClCompile Include="StockForm.cpp" />
     <ClCompile Include="MAYSElectronics.cpp" />
+    <ClCompile Include="Paiement.cpp" />
+    <ClCompile Include="Personne.cpp" />
+    <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Ville.cpp" />
+    <ClCompile Include="Vivre.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CL_CAD.h" />
-    <ClInclude Include="CL_map_TBPersonnel.h" />
-    <ClInclude Include="CL_Personnel.h" />
-    <ClInclude Include="GestionClient.h">
+    <ClInclude Include="Adresse.h" />
+    <ClInclude Include="Article.h" />
+    <ClInclude Include="CAD.h" />
+    <ClInclude Include="Choisir.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Commande.h" />
+    <ClInclude Include="ClientForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionCommande.h">
+    <ClInclude Include="CommandeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionPersonnel.h">
+    <ClInclude Include="PersonnelForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionStatistique.h">
+    <ClInclude Include="StatistiqueForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionStock.h">
+    <ClInclude Include="StockForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MAYSElectronics.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Pch.h" />
+    <ClInclude Include="Paiement.h" />
+    <ClInclude Include="Personne.h" />
+    <ClInclude Include="Personnel.h" />
+    <ClInclude Include="Ville.h" />
+    <ClInclude Include="Vivre.h" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GestionClient.resx">
-      <DependentUpon>GestionClient.h</DependentUpon>
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionCommande.resx">
-      <DependentUpon>GestionCommande.h</DependentUpon>
+    <EmbeddedResource Include="CommandeForm.resx">
+      <DependentUpon>CommandeForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionPersonnel.resx">
-      <DependentUpon>GestionPersonnel.h</DependentUpon>
+    <EmbeddedResource Include="PersonnelForm.resx">
+      <DependentUpon>PersonnelForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionStatistique.resx">
-      <DependentUpon>GestionStatistique.h</DependentUpon>
+    <EmbeddedResource Include="StatistiqueForm.resx">
+      <DependentUpon>StatistiqueForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionStock.resx">
-      <DependentUpon>GestionStock.h</DependentUpon>
+    <EmbeddedResource Include="StockForm.resx">
+      <DependentUpon>StockForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MAYSElectronics.resx">
       <DependentUpon>MAYSElectronics.h</DependentUpon>

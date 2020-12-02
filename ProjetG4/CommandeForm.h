@@ -10,20 +10,20 @@ namespace ProjetG4 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de GestionCommande
+	/// Description résumée de CommandeForm
 	/// </summary>
-	public ref class GestionCommande : public System::Windows::Forms::Form
+	public ref class CommandeForm : public System::Windows::Forms::Form
 	{
 	public:
 		Form^ retour3;
-		GestionCommande(void)
+		CommandeForm(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		GestionCommande(Form^ r3)
+		CommandeForm(Form^ r3)
 		{
 			retour3 = r3;
 			InitializeComponent();
@@ -35,7 +35,7 @@ namespace ProjetG4 {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~GestionCommande()
+		~CommandeForm()
 		{
 			if (components)
 			{
@@ -45,11 +45,11 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
@@ -65,11 +65,11 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::TextBox^ textBox10;
+
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label13;
@@ -78,6 +78,10 @@ namespace ProjetG4 {
 
 	private: System::Windows::Forms::ListBox^ listBox4;
 	private: System::Windows::Forms::TextBox^ textBox11;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker3;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker4;
 
 
 
@@ -115,15 +119,13 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCommande::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CommandeForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -139,11 +141,9 @@ namespace ProjetG4 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
@@ -151,6 +151,10 @@ namespace ProjetG4 {
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox4 = (gcnew System::Windows::Forms::ListBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -161,13 +165,13 @@ namespace ProjetG4 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(41, 36);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionCommande::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &CommandeForm::button1_Click);
 			// 
 			// dataGridView1
 			// 
@@ -193,16 +197,6 @@ namespace ProjetG4 {
 			this->label8->Size = System::Drawing::Size(50, 24);
 			this->label8->TabIndex = 43;
 			this->label8->Text = L"Retour";
-			// 
-			// textBox5
-			// 
-			this->textBox5->BackColor = System::Drawing::Color::White;
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(224, 209);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(247, 34);
-			this->textBox5->TabIndex = 51;
 			// 
 			// label4
 			// 
@@ -238,16 +232,7 @@ namespace ProjetG4 {
 			this->label3->Size = System::Drawing::Size(30, 31);
 			this->label3->TabIndex = 48;
 			this->label3->Text = L"ID";
-			this->label3->Click += gcnew System::EventHandler(this, &GestionCommande::label3_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(224, 160);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(247, 34);
-			this->textBox2->TabIndex = 47;
+			this->label3->Click += gcnew System::EventHandler(this, &CommandeForm::label3_Click);
 			// 
 			// textBox1
 			// 
@@ -270,7 +255,7 @@ namespace ProjetG4 {
 			this->label2->Size = System::Drawing::Size(142, 31);
 			this->label2->TabIndex = 45;
 			this->label2->Text = L"Date de livraison";
-			this->label2->Click += gcnew System::EventHandler(this, &GestionCommande::label2_Click);
+			this->label2->Click += gcnew System::EventHandler(this, &CommandeForm::label2_Click);
 			// 
 			// label1
 			// 
@@ -430,17 +415,7 @@ namespace ProjetG4 {
 			this->button2->TabIndex = 52;
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &GestionCommande::button2_Click);
-			// 
-			// textBox7
-			// 
-			this->textBox7->BackColor = System::Drawing::Color::White;
-			this->textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox7->Location = System::Drawing::Point(224, 260);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(247, 34);
-			this->textBox7->TabIndex = 65;
+			this->button2->Click += gcnew System::EventHandler(this, &CommandeForm::button2_Click);
 			// 
 			// label5
 			// 
@@ -454,7 +429,7 @@ namespace ProjetG4 {
 			this->label5->Size = System::Drawing::Size(149, 31);
 			this->label5->TabIndex = 64;
 			this->label5->Text = L"Date de paiement ";
-			this->label5->Click += gcnew System::EventHandler(this, &GestionCommande::label5_Click);
+			this->label5->Click += gcnew System::EventHandler(this, &CommandeForm::label5_Click);
 			// 
 			// label10
 			// 
@@ -477,17 +452,7 @@ namespace ProjetG4 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(247, 36);
 			this->listBox1->TabIndex = 67;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &GestionCommande::listBox1_SelectedIndexChanged);
-			// 
-			// textBox10
-			// 
-			this->textBox10->BackColor = System::Drawing::Color::White;
-			this->textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox10->Location = System::Drawing::Point(224, 366);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(247, 34);
-			this->textBox10->TabIndex = 69;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &CommandeForm::listBox1_SelectedIndexChanged);
 			// 
 			// label11
 			// 
@@ -502,7 +467,7 @@ namespace ProjetG4 {
 			this->label11->Size = System::Drawing::Size(170, 52);
 			this->label11->TabIndex = 68;
 			this->label11->Text = L"Date d\'enregistrement \ndu solde";
-			this->label11->Click += gcnew System::EventHandler(this, &GestionCommande::label11_Click);
+			this->label11->Click += gcnew System::EventHandler(this, &CommandeForm::label11_Click);
 			// 
 			// label12
 			// 
@@ -571,24 +536,62 @@ namespace ProjetG4 {
 			this->textBox11->Size = System::Drawing::Size(166, 34);
 			this->textBox11->TabIndex = 76;
 			// 
-			// GestionCommande
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker1->Location = System::Drawing::Point(224, 213);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(247, 30);
+			this->dateTimePicker1->TabIndex = 77;
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker2->Location = System::Drawing::Point(224, 164);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(247, 30);
+			this->dateTimePicker2->TabIndex = 78;
+			// 
+			// dateTimePicker3
+			// 
+			this->dateTimePicker3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker3->Location = System::Drawing::Point(224, 261);
+			this->dateTimePicker3->Name = L"dateTimePicker3";
+			this->dateTimePicker3->Size = System::Drawing::Size(247, 30);
+			this->dateTimePicker3->TabIndex = 79;
+			// 
+			// dateTimePicker4
+			// 
+			this->dateTimePicker4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker4->Location = System::Drawing::Point(224, 367);
+			this->dateTimePicker4->Name = L"dateTimePicker4";
+			this->dateTimePicker4->Size = System::Drawing::Size(247, 30);
+			this->dateTimePicker4->TabIndex = 80;
+			// 
+			// CommandeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1102, 716);
+			this->Controls->Add(this->dateTimePicker4);
+			this->Controls->Add(this->dateTimePicker3);
+			this->Controls->Add(this->dateTimePicker2);
+			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->textBox11);
 			this->Controls->Add(this->listBox4);
 			this->Controls->Add(this->listBox2);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label13);
-			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->label9);
@@ -602,11 +605,9 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -617,7 +618,7 @@ namespace ProjetG4 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1120, 763);
 			this->MinimumSize = System::Drawing::Size(1120, 763);
-			this->Name = L"GestionCommande";
+			this->Name = L"CommandeForm";
 			this->Text = L"Gestion Commande";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

@@ -13,65 +13,116 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Couche Composants">
+      <UniqueIdentifier>{02124dd2-4b82-46dd-ac22-be62b8ba04f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Couche service">
+      <UniqueIdentifier>{0c890d81-8e27-4715-9ab9-b15dc7806a3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GestionPersonnel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GestionClient.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GestionCommande.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GestionStock.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GestionStatistique.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="MAYSElectronics.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_CAD.cpp">
+    <ClCompile Include="CAD.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Adresse.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Choisir.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Commande.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Paiement.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Personne.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Personnel.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Ville.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Vivre.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_map_TBPersonnel.cpp">
+    <ClCompile Include="CommandeForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CL_Personnel.cpp">
+    <ClCompile Include="PersonnelForm.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="StatistiqueForm.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="StockForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GestionPersonnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GestionClient.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GestionCommande.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GestionStock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GestionStatistique.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="MAYSElectronics.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_CAD.h">
+    <ClInclude Include="Adresse.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="CAD.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Choisir.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Commande.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Paiement.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Personne.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Personnel.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Ville.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Vivre.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="Article.h">
+      <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_map_TBPersonnel.h">
+    <ClInclude Include="CommandeForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CL_Personnel.h">
+    <ClInclude Include="PersonnelForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Pch.h">
+    <ClInclude Include="StatistiqueForm.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="StockForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

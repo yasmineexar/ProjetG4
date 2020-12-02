@@ -10,20 +10,20 @@ namespace ProjetG4 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de GestionStatistique
+	/// Description résumée de StatistiqueForm
 	/// </summary>
-	public ref class GestionStatistique : public System::Windows::Forms::Form
+	public ref class StatistiqueForm : public System::Windows::Forms::Form
 	{
 	public:
 		Form^ retour5;
-		GestionStatistique(void)
+		StatistiqueForm(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		GestionStatistique(Form^ r5)
+		StatistiqueForm(Form^ r5)
 		{
 			retour5 = r5;
 			InitializeComponent();
@@ -36,7 +36,7 @@ namespace ProjetG4 {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~GestionStatistique()
+		~StatistiqueForm()
 		{
 			if (components)
 			{
@@ -62,7 +62,7 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStatistique::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(StatistiqueForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -76,13 +76,13 @@ namespace ProjetG4 {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold));
 			this->button1->ForeColor = System::Drawing::SystemColors::Info;
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(41, 36);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionStatistique::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &StatistiqueForm::button1_Click);
 			// 
 			// label6
 			// 
@@ -102,14 +102,14 @@ namespace ProjetG4 {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(528, 46);
+			this->dataGridView1->Location = System::Drawing::Point(23, 106);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(385, 314);
+			this->dataGridView1->Size = System::Drawing::Size(903, 228);
 			this->dataGridView1->TabIndex = 31;
 			// 
-			// GestionStatistique
+			// StatistiqueForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -123,16 +123,16 @@ namespace ProjetG4 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
-			this->Name = L"GestionStatistique";
+			this->Name = L"StatistiqueForm";
 			this->Text = L"Gestion Statistique";
-			this->Load += gcnew System::EventHandler(this, &GestionStatistique::GestionStatistique_Load);
+			this->Load += gcnew System::EventHandler(this, &StatistiqueForm::StatistiqueForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void GestionStatistique_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void StatistiqueForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();

@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>45, 46</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAcCAYAAACdz7SqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAMVJREFUSEvtlFERgzAQRCOhEioBCUioBCQgAQdIQEIlVEIlVEIlhF3YzIROKUya
+        wM+9mf0gE+6FS4IzDCMb3vsKafRYHglfSKehskRCUl4KCYXvSTfzQGrkoil5QeFP4TfuSI80SK1X02AB
+        ZEu4BreCi+kQ1rmq7DqamCr8RehKiyy7wgEkN/yIJxJ3YHkuNJgKBfFe82zsO3iYuCUOqx+QqWXI/6da
+        hWJ4ZW7I/tWnIEHgmD8SgSzc2eOkROJWj4ZhnIFzI3uhQvDf2d5tAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA1sAAAI8CAYAAAAHurFTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

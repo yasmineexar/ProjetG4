@@ -10,20 +10,20 @@ namespace ProjetG4 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de GestionStock
+	/// Description résumée de StockForm
 	/// </summary>
-	public ref class GestionStock : public System::Windows::Forms::Form
+	public ref class StockForm : public System::Windows::Forms::Form
 	{
 	public:
 		Form^ retour4;
-		GestionStock(void)
+		StockForm(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		GestionStock(Form^ r4)
+		StockForm(Form^ r4)
 		{
 			retour4 = r4;
 			InitializeComponent();
@@ -37,7 +37,7 @@ namespace ProjetG4 {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~GestionStock()
+		~StockForm()
 		{
 			if (components)
 			{
@@ -92,7 +92,7 @@ namespace ProjetG4 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStock::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(StockForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -127,13 +127,13 @@ namespace ProjetG4 {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold));
 			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(12, 16);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(41, 36);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionStock::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &StockForm::button1_Click);
 			// 
 			// textBox5
 			// 
@@ -380,7 +380,7 @@ namespace ProjetG4 {
 			this->label7->Size = System::Drawing::Size(72, 31);
 			this->label7->TabIndex = 38;
 			this->label7->Text = L"Prix HT";
-			this->label7->Click += gcnew System::EventHandler(this, &GestionStock::label7_Click);
+			this->label7->Click += gcnew System::EventHandler(this, &StockForm::label7_Click);
 			// 
 			// textBox9
 			// 
@@ -419,7 +419,7 @@ namespace ProjetG4 {
 			this->label8->TabIndex = 42;
 			this->label8->Text = L"Retour";
 			// 
-			// GestionStock
+			// StockForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -455,16 +455,16 @@ namespace ProjetG4 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
-			this->Name = L"GestionStock";
-			this->Text = L"GestionStock";
-			this->Load += gcnew System::EventHandler(this, &GestionStock::GestionStock_Load);
+			this->Name = L"StockForm";
+			this->Text = L"StockForm";
+			this->Load += gcnew System::EventHandler(this, &StockForm::StockForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void GestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void StockForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();

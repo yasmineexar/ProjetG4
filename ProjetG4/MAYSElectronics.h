@@ -1,9 +1,9 @@
 #pragma once
-#include"GestionPersonnel.h"
-#include"GestionClient.h"
-#include"GestionCommande.h"
-#include"GestionStock.h"
-#include"GestionStatistique.h"
+#include"PersonnelForm.h"
+#include"ClientForm.h"
+#include"CommandeForm.h"
+#include"StockForm.h"
+#include"StatistiqueForm.h"
 
 namespace ProjetG4 {
 
@@ -167,27 +167,27 @@ namespace ProjetG4 {
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	GestionPersonnel^ page = gcnew GestionPersonnel(this);
+	PersonnelForm^ page = gcnew PersonnelForm(this);
 	this->Hide();
 	page->ShowDialog();
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	GestionClient^ page = gcnew GestionClient(this);
+	ClientForm^ page = gcnew ClientForm(this);
 	this->Hide();
 	page->ShowDialog();
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	GestionCommande^ page = gcnew GestionCommande(this);
+	CommandeForm^ page = gcnew CommandeForm(this);
 	this->Hide();
 	page->ShowDialog();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	GestionStock^ page = gcnew GestionStock(this);
+	StockForm^ page = gcnew StockForm(this);
 	this->Hide();
 	page->ShowDialog();
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	GestionStatistique^ page = gcnew GestionStatistique(this);
+	StatistiqueForm^ page = gcnew StatistiqueForm(this);
 	this->Hide();
 	page->ShowDialog();
 }
