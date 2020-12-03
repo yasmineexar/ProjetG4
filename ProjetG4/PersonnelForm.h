@@ -1,4 +1,5 @@
 #pragma once
+#include"SVC_Gemploye.h" //inclure le service gestion employe
 
 namespace ProjetG4 {
 
@@ -8,7 +9,8 @@ namespace ProjetG4 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Data::SqlClient;
+	using namespace Service;
 	/// <summary>
 	/// Description résumée de PersonnelForm
 	/// </summary>
@@ -66,23 +68,24 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ lbl_ville;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::ComponentModel::IContainer^ components;
-	private: Data::DataSet^ ds;
+	private: Data::DataTable^ dt;
 	private: int index;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::TextBox^ txtbox_sup;
+
 	private: System::Windows::Forms::Label^ lbl_sup;
 	private: System::Windows::Forms::Label^ lbl_idaffich;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::ComboBox^ boxville;
 	private: String^ mode;
-
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: SVC_Gemploye^ gpersonnel = gcnew SVC_Gemploye(); //declarer un objet de type gestion employe
 	protected:
-
+		
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-
+		
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -113,11 +116,11 @@ namespace ProjetG4 {
 			this->lbl_ville = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->txtbox_sup = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_sup = (gcnew System::Windows::Forms::Label());
 			this->lbl_idaffich = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->boxville = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgviewDB))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
@@ -380,16 +383,6 @@ namespace ProjetG4 {
 			this->dateTimePicker1->TabIndex = 24;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &PersonnelForm::dateTimePicker1_ValueChanged);
 			// 
-			// txtbox_sup
-			// 
-			this->txtbox_sup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txtbox_sup->Location = System::Drawing::Point(42, 267);
-			this->txtbox_sup->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtbox_sup->Name = L"txtbox_sup";
-			this->txtbox_sup->Size = System::Drawing::Size(312, 34);
-			this->txtbox_sup->TabIndex = 25;
-			// 
 			// lbl_sup
 			// 
 			this->lbl_sup->AutoSize = true;
@@ -440,6 +433,16 @@ namespace ProjetG4 {
 			this->boxville->Size = System::Drawing::Size(119, 33);
 			this->boxville->TabIndex = 29;
 			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(42, 268);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(311, 33);
+			this->comboBox1->TabIndex = 30;
+			// 
 			// PersonnelForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -447,11 +450,11 @@ namespace ProjetG4 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(951, 601);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->boxville);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->lbl_idaffich);
 			this->Controls->Add(this->lbl_sup);
-			this->Controls->Add(this->txtbox_sup);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->lbl_ville);
 			this->Controls->Add(this->lbl_date);
@@ -489,27 +492,23 @@ private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs
 	this->Hide();
 	retour->Show();
 }
+private: System::Void PersonnelForm_Load(System::Object^ sender, System::EventArgs^ e);
 	   //bouton enregistrer
-private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e);
 		//bouton creer
-private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e);
 	   //bouton modifier
-private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e);
 	   //bouton afficher
-private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e);
 	   //bouton supprimer
-private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dgviewDB_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
+private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e);
+	   //datagridView 
+private: System::Void dgviewDB_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+
 private: System::Void txtbox_prenom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void PersonnelForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void lbl_date_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void lbl_id_Click(System::Object^ sender, System::EventArgs^ e) {
