@@ -14,6 +14,7 @@ namespace Composant {
 		String^ get_prenom();
 		void set_id(int id);
 		int get_id();
+	protected:
 		virtual String^ SELECT(void);
 		virtual String^ INSERT(void);
 		virtual String^ UPDATE(void);
@@ -26,5 +27,3 @@ namespace Composant {
 
 	};
 }
-
-

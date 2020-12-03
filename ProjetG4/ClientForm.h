@@ -43,41 +43,59 @@ namespace ProjetG4 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ btn_retour;
+	private: System::Windows::Forms::DataGridView^ dgViewClient;
+	protected:
+
+
+
+	private: System::Windows::Forms::Button^ btn_enrg;
+
+	private: System::Windows::Forms::Button^ btn_creer;
+	private: System::Windows::Forms::Button^ btn_modifier;
+	private: System::Windows::Forms::Button^ btn_afficher;
+	private: System::Windows::Forms::Button^ btn_supprimer;
 
 
 
 
+	private: System::Windows::Forms::Label^ lbl_prachat;
+
+
+	private: System::Windows::Forms::Label^ lbl_idclient;
+	private: System::Windows::Forms::TextBox^ txt_prenom;
 
 
 
+	private: System::Windows::Forms::TextBox^ txt_nom;
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ lbl_prenom;
 
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ lbl_nom;
+	private: System::Windows::Forms::TextBox^ txt_adrFact;
 
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::ListBox^ Ville;
-	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::TextBox^ textBox8;
+
+	private: System::Windows::Forms::Label^ adrFact;
+
+	private: System::Windows::Forms::Label^ lblretour;
+	private: System::Windows::Forms::TextBox^ txt_adrLiv;
+
+
+	private: System::Windows::Forms::Label^ adrLiv;
+
+
+	private: System::Windows::Forms::Label^ lbl_date_naiss;
+
+
+
+	private: System::Windows::Forms::TextBox^ msg_txt;
+
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::Label^ lbl_idaffich;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+
 
 
 
@@ -102,315 +120,286 @@ namespace ProjetG4 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ClientForm::typeid));
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->Ville = (gcnew System::Windows::Forms::ListBox());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->btn_retour = (gcnew System::Windows::Forms::Button());
+			this->dgViewClient = (gcnew System::Windows::Forms::DataGridView());
+			this->btn_enrg = (gcnew System::Windows::Forms::Button());
+			this->btn_creer = (gcnew System::Windows::Forms::Button());
+			this->btn_modifier = (gcnew System::Windows::Forms::Button());
+			this->btn_afficher = (gcnew System::Windows::Forms::Button());
+			this->btn_supprimer = (gcnew System::Windows::Forms::Button());
+			this->lbl_prachat = (gcnew System::Windows::Forms::Label());
+			this->lbl_idclient = (gcnew System::Windows::Forms::Label());
+			this->txt_prenom = (gcnew System::Windows::Forms::TextBox());
+			this->txt_nom = (gcnew System::Windows::Forms::TextBox());
+			this->lbl_prenom = (gcnew System::Windows::Forms::Label());
+			this->lbl_nom = (gcnew System::Windows::Forms::Label());
+			this->txt_adrFact = (gcnew System::Windows::Forms::TextBox());
+			this->adrFact = (gcnew System::Windows::Forms::Label());
+			this->lblretour = (gcnew System::Windows::Forms::Label());
+			this->txt_adrLiv = (gcnew System::Windows::Forms::TextBox());
+			this->adrLiv = (gcnew System::Windows::Forms::Label());
+			this->lbl_date_naiss = (gcnew System::Windows::Forms::Label());
+			this->msg_txt = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->lbl_idaffich = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewClient))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button1
+			// btn_retour
 			// 
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(12, 12);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(42, 44);
-			this->button1->TabIndex = 0;
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &ClientForm::button1_Click);
+			this->btn_retour->BackColor = System::Drawing::Color::Transparent;
+			this->btn_retour->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_retour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold));
+			this->btn_retour->ForeColor = System::Drawing::Color::White;
+			this->btn_retour->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_retour.Image")));
+			this->btn_retour->Location = System::Drawing::Point(12, 12);
+			this->btn_retour->Name = L"btn_retour";
+			this->btn_retour->Size = System::Drawing::Size(42, 44);
+			this->btn_retour->TabIndex = 0;
+			this->btn_retour->UseVisualStyleBackColor = false;
+			this->btn_retour->Click += gcnew System::EventHandler(this, &ClientForm::btn_retour_Click);
 			// 
-			// dataGridView1
+			// dgViewClient
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(399, 59);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(510, 141);
-			this->dataGridView1->TabIndex = 13;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ClientForm::dataGridView1_CellContentClick);
+			this->dgViewClient->BackgroundColor = System::Drawing::Color::White;
+			this->dgViewClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgViewClient->Location = System::Drawing::Point(399, 59);
+			this->dgViewClient->Name = L"dgViewClient";
+			this->dgViewClient->RowHeadersWidth = 51;
+			this->dgViewClient->RowTemplate->Height = 24;
+			this->dgViewClient->Size = System::Drawing::Size(510, 141);
+			this->dgViewClient->TabIndex = 13;
+			this->dgViewClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ClientForm::dgViewClient_CellContentClick);
 			// 
-			// button6
+			// btn_enrg
 			// 
-			this->button6->BackColor = System::Drawing::Color::Transparent;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button6->Location = System::Drawing::Point(775, 358);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(134, 51);
-			this->button6->TabIndex = 18;
-			this->button6->Text = L"Enregistrer";
-			this->button6->UseVisualStyleBackColor = false;
+			this->btn_enrg->BackColor = System::Drawing::Color::Transparent;
+			this->btn_enrg->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_enrg->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_enrg->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_enrg->Location = System::Drawing::Point(775, 358);
+			this->btn_enrg->Name = L"btn_enrg";
+			this->btn_enrg->Size = System::Drawing::Size(134, 51);
+			this->btn_enrg->TabIndex = 18;
+			this->btn_enrg->Text = L"Enregistrer";
+			this->btn_enrg->UseVisualStyleBackColor = false;
+			this->btn_enrg->Click += gcnew System::EventHandler(this, &ClientForm::btn_enrg_Click);
 			// 
-			// button5
+			// btn_creer
 			// 
-			this->button5->BackColor = System::Drawing::Color::Transparent;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button5->Location = System::Drawing::Point(26, 358);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(134, 51);
-			this->button5->TabIndex = 17;
-			this->button5->Text = L"Créer";
-			this->button5->UseVisualStyleBackColor = false;
+			this->btn_creer->BackColor = System::Drawing::Color::Transparent;
+			this->btn_creer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_creer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_creer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_creer->Location = System::Drawing::Point(26, 358);
+			this->btn_creer->Name = L"btn_creer";
+			this->btn_creer->Size = System::Drawing::Size(134, 51);
+			this->btn_creer->TabIndex = 17;
+			this->btn_creer->Text = L"Créer";
+			this->btn_creer->UseVisualStyleBackColor = false;
 			// 
-			// button4
+			// btn_modifier
 			// 
-			this->button4->BackColor = System::Drawing::Color::Transparent;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(214, 358);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(134, 51);
-			this->button4->TabIndex = 16;
-			this->button4->Text = L"Modifier";
-			this->button4->UseVisualStyleBackColor = false;
+			this->btn_modifier->BackColor = System::Drawing::Color::Transparent;
+			this->btn_modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_modifier->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_modifier->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_modifier->Location = System::Drawing::Point(214, 358);
+			this->btn_modifier->Name = L"btn_modifier";
+			this->btn_modifier->Size = System::Drawing::Size(134, 51);
+			this->btn_modifier->TabIndex = 16;
+			this->btn_modifier->Text = L"Modifier";
+			this->btn_modifier->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// btn_afficher
 			// 
-			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button3->Location = System::Drawing::Point(399, 358);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(134, 51);
-			this->button3->TabIndex = 15;
-			this->button3->Text = L"Afficher";
-			this->button3->UseVisualStyleBackColor = false;
+			this->btn_afficher->BackColor = System::Drawing::Color::Transparent;
+			this->btn_afficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_afficher->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_afficher->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_afficher->Location = System::Drawing::Point(399, 358);
+			this->btn_afficher->Name = L"btn_afficher";
+			this->btn_afficher->Size = System::Drawing::Size(134, 51);
+			this->btn_afficher->TabIndex = 15;
+			this->btn_afficher->Text = L"Afficher";
+			this->btn_afficher->UseVisualStyleBackColor = false;
+			this->btn_afficher->Click += gcnew System::EventHandler(this, &ClientForm::btn_afficher_Click);
 			// 
-			// button2
+			// btn_supprimer
 			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(585, 358);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(134, 51);
-			this->button2->TabIndex = 14;
-			this->button2->Text = L"Supprimer";
-			this->button2->UseVisualStyleBackColor = false;
+			this->btn_supprimer->BackColor = System::Drawing::Color::Transparent;
+			this->btn_supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_supprimer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_supprimer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_supprimer->Location = System::Drawing::Point(585, 358);
+			this->btn_supprimer->Name = L"btn_supprimer";
+			this->btn_supprimer->Size = System::Drawing::Size(134, 51);
+			this->btn_supprimer->TabIndex = 14;
+			this->btn_supprimer->Text = L"Supprimer";
+			this->btn_supprimer->UseVisualStyleBackColor = false;
+			this->btn_supprimer->Click += gcnew System::EventHandler(this, &ClientForm::btn_supprimer_Click);
 			// 
-			// label4
+			// lbl_prachat
 			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(20, 272);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(144, 31);
-			this->label4->TabIndex = 25;
-			this->label4->Text = L"Date de 1er achat";
-			this->label4->Click += gcnew System::EventHandler(this, &ClientForm::label4_Click);
+			this->lbl_prachat->AutoSize = true;
+			this->lbl_prachat->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_prachat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_prachat->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_prachat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_prachat->Location = System::Drawing::Point(20, 272);
+			this->lbl_prachat->Name = L"lbl_prachat";
+			this->lbl_prachat->Size = System::Drawing::Size(144, 31);
+			this->lbl_prachat->TabIndex = 25;
+			this->lbl_prachat->Text = L"Date de 1er achat";
 			// 
-			// textBox3
+			// lbl_idclient
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbl_idclient->AutoSize = true;
+			this->lbl_idclient->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_idclient->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_idclient->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_idclient->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_idclient->Location = System::Drawing::Point(24, 62);
+			this->lbl_idclient->Name = L"lbl_idclient";
+			this->lbl_idclient->Size = System::Drawing::Size(30, 31);
+			this->lbl_idclient->TabIndex = 23;
+			this->lbl_idclient->Text = L"ID";
+			// 
+			// txt_prenom
+			// 
+			this->txt_prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(102, 59);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(246, 34);
-			this->textBox3->TabIndex = 24;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &ClientForm::textBox3_TextChanged);
+			this->txt_prenom->Location = System::Drawing::Point(102, 169);
+			this->txt_prenom->Name = L"txt_prenom";
+			this->txt_prenom->Size = System::Drawing::Size(246, 34);
+			this->txt_prenom->TabIndex = 22;
 			// 
-			// label3
+			// txt_nom
 			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(24, 62);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(30, 31);
-			this->label3->TabIndex = 23;
-			this->label3->Text = L"ID";
-			// 
-			// textBox2
-			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(102, 169);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(246, 34);
-			this->textBox2->TabIndex = 22;
+			this->txt_nom->Location = System::Drawing::Point(102, 114);
+			this->txt_nom->Name = L"txt_nom";
+			this->txt_nom->Size = System::Drawing::Size(246, 34);
+			this->txt_nom->TabIndex = 21;
 			// 
-			// textBox1
+			// lbl_prenom
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbl_prenom->AutoSize = true;
+			this->lbl_prenom->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_prenom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_prenom->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_prenom->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_prenom->Location = System::Drawing::Point(20, 169);
+			this->lbl_prenom->Name = L"lbl_prenom";
+			this->lbl_prenom->Size = System::Drawing::Size(74, 31);
+			this->lbl_prenom->TabIndex = 20;
+			this->lbl_prenom->Text = L"Prenom";
+			// 
+			// lbl_nom
+			// 
+			this->lbl_nom->AutoSize = true;
+			this->lbl_nom->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_nom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_nom->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_nom->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_nom->Location = System::Drawing::Point(20, 119);
+			this->lbl_nom->Name = L"lbl_nom";
+			this->lbl_nom->Size = System::Drawing::Size(48, 31);
+			this->lbl_nom->TabIndex = 19;
+			this->lbl_nom->Text = L"Nom";
+			// 
+			// txt_adrFact
+			// 
+			this->txt_adrFact->BackColor = System::Drawing::Color::White;
+			this->txt_adrFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(102, 114);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(246, 34);
-			this->textBox1->TabIndex = 21;
+			this->txt_adrFact->Location = System::Drawing::Point(399, 308);
+			this->txt_adrFact->Multiline = true;
+			this->txt_adrFact->Name = L"txt_adrFact";
+			this->txt_adrFact->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->txt_adrFact->Size = System::Drawing::Size(384, 34);
+			this->txt_adrFact->TabIndex = 28;
 			// 
-			// label2
+			// adrFact
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(20, 169);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(74, 31);
-			this->label2->TabIndex = 20;
-			this->label2->Text = L"Prenom";
+			this->adrFact->AutoSize = true;
+			this->adrFact->BackColor = System::Drawing::Color::Transparent;
+			this->adrFact->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->adrFact->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->adrFact->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->adrFact->Location = System::Drawing::Point(393, 272);
+			this->adrFact->Name = L"adrFact";
+			this->adrFact->Size = System::Drawing::Size(187, 31);
+			this->adrFact->TabIndex = 27;
+			this->adrFact->Text = L"Adresse de facturation";
 			// 
-			// label1
+			// lblretour
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(20, 119);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 31);
-			this->label1->TabIndex = 19;
-			this->label1->Text = L"Nom";
-			// 
-			// textBox4
-			// 
-			this->textBox4->BackColor = System::Drawing::Color::White;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblretour->AutoSize = true;
+			this->lblretour->BackColor = System::Drawing::Color::Transparent;
+			this->lblretour->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lblretour->Font = (gcnew System::Drawing::Font(L"Agency FB", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(399, 308);
-			this->textBox4->Multiline = true;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox4->Size = System::Drawing::Size(384, 34);
-			this->textBox4->TabIndex = 28;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &ClientForm::textBox4_TextChanged);
+			this->lblretour->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lblretour->Location = System::Drawing::Point(60, 22);
+			this->lblretour->Name = L"lblretour";
+			this->lblretour->Size = System::Drawing::Size(50, 24);
+			this->lblretour->TabIndex = 29;
+			this->lblretour->Text = L"Retour";
 			// 
-			// label5
+			// txt_adrLiv
 			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Location = System::Drawing::Point(393, 203);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(172, 31);
-			this->label5->TabIndex = 27;
-			this->label5->Text = L"Adresse de livraison";
-			this->label5->Click += gcnew System::EventHandler(this, &ClientForm::label5_Click);
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Agency FB", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txt_adrLiv->BackColor = System::Drawing::Color::White;
+			this->txt_adrLiv->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Location = System::Drawing::Point(60, 22);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(50, 24);
-			this->label6->TabIndex = 29;
-			this->label6->Text = L"Retour";
+			this->txt_adrLiv->Location = System::Drawing::Point(399, 237);
+			this->txt_adrLiv->Multiline = true;
+			this->txt_adrLiv->Name = L"txt_adrLiv";
+			this->txt_adrLiv->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->txt_adrLiv->Size = System::Drawing::Size(384, 34);
+			this->txt_adrLiv->TabIndex = 30;
 			// 
-			// textBox6
+			// adrLiv
 			// 
-			this->textBox6->BackColor = System::Drawing::Color::White;
-			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->adrLiv->AutoSize = true;
+			this->adrLiv->BackColor = System::Drawing::Color::Transparent;
+			this->adrLiv->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->adrLiv->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->adrLiv->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->adrLiv->Location = System::Drawing::Point(393, 203);
+			this->adrLiv->Name = L"adrLiv";
+			this->adrLiv->Size = System::Drawing::Size(172, 31);
+			this->adrLiv->TabIndex = 33;
+			this->adrLiv->Text = L"Adresse de livraison";
+			// 
+			// lbl_date_naiss
+			// 
+			this->lbl_date_naiss->AutoSize = true;
+			this->lbl_date_naiss->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_date_naiss->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_date_naiss->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_date_naiss->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_date_naiss->Location = System::Drawing::Point(20, 207);
+			this->lbl_date_naiss->Name = L"lbl_date_naiss";
+			this->lbl_date_naiss->Size = System::Drawing::Size(152, 31);
+			this->lbl_date_naiss->TabIndex = 35;
+			this->lbl_date_naiss->Text = L"Date de naissance";
+			// 
+			// msg_txt
+			// 
+			this->msg_txt->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->msg_txt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(399, 237);
-			this->textBox6->Multiline = true;
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox6->Size = System::Drawing::Size(384, 34);
-			this->textBox6->TabIndex = 30;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Location = System::Drawing::Point(393, 274);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(187, 31);
-			this->label7->TabIndex = 33;
-			this->label7->Text = L"Adresse de facturation";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->label9->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label9->Location = System::Drawing::Point(20, 207);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(152, 31);
-			this->label9->TabIndex = 35;
-			this->label9->Text = L"Date de naissance";
-			this->label9->Click += gcnew System::EventHandler(this, &ClientForm::label9_Click);
-			// 
-			// Ville
-			// 
-			this->Ville->FormattingEnabled = true;
-			this->Ville->ItemHeight = 16;
-			this->Ville->Location = System::Drawing::Point(803, 235);
-			this->Ville->Name = L"Ville";
-			this->Ville->Size = System::Drawing::Size(106, 36);
-			this->Ville->TabIndex = 36;
-			// 
-			// listBox1
-			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(803, 306);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(106, 36);
-			this->listBox1->TabIndex = 37;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->textBox8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox8->Location = System::Drawing::Point(26, 423);
-			this->textBox8->Multiline = true;
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox8->Size = System::Drawing::Size(693, 83);
-			this->textBox8->TabIndex = 38;
+			this->msg_txt->Location = System::Drawing::Point(26, 423);
+			this->msg_txt->Multiline = true;
+			this->msg_txt->Name = L"msg_txt";
+			this->msg_txt->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->msg_txt->Size = System::Drawing::Size(693, 83);
+			this->msg_txt->TabIndex = 38;
 			// 
 			// dateTimePicker1
 			// 
@@ -430,6 +419,39 @@ namespace ProjetG4 {
 			this->dateTimePicker2->Size = System::Drawing::Size(322, 30);
 			this->dateTimePicker2->TabIndex = 40;
 			// 
+			// lbl_idaffich
+			// 
+			this->lbl_idaffich->AutoSize = true;
+			this->lbl_idaffich->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_idaffich->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_idaffich->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_idaffich->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_idaffich->Location = System::Drawing::Point(96, 62);
+			this->lbl_idaffich->Name = L"lbl_idaffich";
+			this->lbl_idaffich->Size = System::Drawing::Size(143, 31);
+			this->lbl_idaffich->TabIndex = 41;
+			this->lbl_idaffich->Text = L"ID s\'affichera ici!";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(798, 237);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(111, 33);
+			this->comboBox1->TabIndex = 42;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(798, 308);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(111, 33);
+			this->comboBox2->TabIndex = 43;
+			// 
 			// ClientForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -437,31 +459,31 @@ namespace ProjetG4 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->lbl_idaffich);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->Ville);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->msg_txt);
+			this->Controls->Add(this->lbl_date_naiss);
+			this->Controls->Add(this->adrLiv);
+			this->Controls->Add(this->txt_adrLiv);
+			this->Controls->Add(this->lblretour);
+			this->Controls->Add(this->txt_adrFact);
+			this->Controls->Add(this->adrFact);
+			this->Controls->Add(this->lbl_prachat);
+			this->Controls->Add(this->lbl_idclient);
+			this->Controls->Add(this->txt_prenom);
+			this->Controls->Add(this->txt_nom);
+			this->Controls->Add(this->lbl_prenom);
+			this->Controls->Add(this->lbl_nom);
+			this->Controls->Add(this->btn_enrg);
+			this->Controls->Add(this->btn_creer);
+			this->Controls->Add(this->btn_modifier);
+			this->Controls->Add(this->btn_afficher);
+			this->Controls->Add(this->btn_supprimer);
+			this->Controls->Add(this->dgViewClient);
+			this->Controls->Add(this->btn_retour);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
@@ -469,7 +491,7 @@ namespace ProjetG4 {
 			this->Name = L"ClientForm";
 			this->Text = L"ClientForm";
 			this->Load += gcnew System::EventHandler(this, &ClientForm::ClientForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewClient))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -478,34 +500,21 @@ namespace ProjetG4 {
 private: System::Void ClientForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 	   //bouton retour
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		retour2->Show();
 }
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+private: System::Void btn_enrg_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void dgViewClient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }

@@ -8,11 +8,15 @@ namespace Composant {
 		DateTime^ date_dembauche;
 		int id_superieur;
 		int id_adresse;
+		String^ date_to_string(DateTime^ date);
 	public:
 		Personnel();
 		String^ SELECT() override;
+		String^ SELECTbyid();
 		String^ INSERT() override;
+		String^ INSERTwithsup();
 		String^ UPDATE() override;
+		String^ UPDATEwithsup();
 		String^ DELETE() override;
 		void set_date_embauche(DateTime^ date);
 		DateTime^ get_date_embauche();
@@ -23,4 +27,3 @@ namespace Composant {
 		~Personnel();
 	};
 }
-

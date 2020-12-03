@@ -47,7 +47,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ label8;
 
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::Label^ label3;
 
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -82,6 +82,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker3;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker4;
+	private: System::Windows::Forms::Label^ label15;
 
 
 
@@ -124,7 +125,6 @@ namespace ProjetG4 {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -155,6 +155,7 @@ namespace ProjetG4 {
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label15 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -210,15 +211,6 @@ namespace ProjetG4 {
 			this->label4->Size = System::Drawing::Size(134, 31);
 			this->label4->TabIndex = 50;
 			this->label4->Text = L"Date d\'émission";
-			// 
-			// textBox3
-			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(224, 62);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(247, 34);
-			this->textBox3->TabIndex = 49;
 			// 
 			// label3
 			// 
@@ -572,6 +564,19 @@ namespace ProjetG4 {
 			this->dateTimePicker4->Size = System::Drawing::Size(247, 30);
 			this->dateTimePicker4->TabIndex = 80;
 			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->BackColor = System::Drawing::Color::Transparent;
+			this->label15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label15->Location = System::Drawing::Point(218, 65);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(143, 31);
+			this->label15->TabIndex = 81;
+			this->label15->Text = L"ID s\'affichera ici!";
+			// 
 			// CommandeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -579,6 +584,7 @@ namespace ProjetG4 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1102, 716);
+			this->Controls->Add(this->label15);
 			this->Controls->Add(this->dateTimePicker4);
 			this->Controls->Add(this->dateTimePicker3);
 			this->Controls->Add(this->dateTimePicker2);
@@ -606,7 +612,6 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);

@@ -1,13 +1,15 @@
 #pragma once
-using namespace System;
+
 namespace Composant
 {
+	using namespace System;
 	ref class Adresse
 	{
 	private:
 		int ID_Adresse;
 		String^ adresse;
 		int Id_Ville;
+		int Id_Client;
 
 	public:
 		Adresse(void);
@@ -21,6 +23,8 @@ namespace Composant
 		int getIdAdresse(void);
 		String^ getAdresse(void);
 		int getIdVille(void);
+		void setIdClient(int);
+		int getIdClient(void);
 	protected:
 		~Adresse() {
 			delete adresse;

@@ -1,5 +1,4 @@
 #include "Personne.h"
-
 namespace Composant {
 
 
@@ -38,18 +37,28 @@ namespace Composant {
         return this->id;
     }
 
-    String^ Composant::Personne::SELECT(void)
+    String^ Personne::SELECT(void)
     {
+        throw gcnew System::NotImplementedException();
+        // TODO: insérer une instruction return ici
     }
 
-    String^ Composant::Personne::INSERT(void)
+    String^ Personne::INSERT(void)
     {
+        throw gcnew System::NotImplementedException();
+        // TODO: insérer une instruction return ici
     }
 
-    String^ Composant::Personne::UPDATE(void)
+    String^ Personne::UPDATE(void)
     {
+        throw gcnew System::NotImplementedException();
+        // TODO: insérer une instruction return ici
     }
-    String^ Composant::Personne::DELETE(void)
+
+    String^ Personne::DELETE(void)
     {
+        throw gcnew System::NotImplementedException();
+        // TODO: insérer une instruction return ici
     }
+
 }

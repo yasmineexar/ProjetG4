@@ -7,7 +7,7 @@ namespace Composant
     {
         this->rq_sql = "RIEN"; //initialiser la requete à RIEN
         //les informations de connexion à la base de données: le serveur; le nom de la BDD; le type de la sécurité
-        this->cnx = "Data Source=DESKTOP-4VU7GUS;" + "Initial Catalog= BDDProjetG4;" + "Integrated Security=SSPI";
+        this->cnx = "Server=tcp:poo.database.windows.net,1433;Initial Catalog=Projetg1;Persist Security Info=False;User ID=nazim;Password=uLafdnE6-;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         this->CNX = gcnew SqlConnection(this->cnx);//connexion à la BDD SQL Server
         this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);//Initialise une nouvelle instance de la classe SqlCommand avec le texte de la requete et l'objet CNX
         this->CMD->CommandType = CommandType::Text;//définit le type de la commande à texte
@@ -33,13 +33,13 @@ namespace Composant
         this->CNX->Close();
     }
 
-    DataSet^ CAD::getRows(String^ rq_sql, String^ dataTableName)
+    DataTable^ CAD::getRows(String^ rq_sql)
     {
         this->setSQL(rq_sql);
         this->DA = gcnew SqlDataAdapter(this->CMD);
         this->CMD->CommandText = this->rq_sql;
-        this->DS = gcnew DataSet();
-        this->DA->Fill(this->DS, dataTableName);//remplir le dataset avec la table spécifiée en exécutant la requete de commande
+        this->DS = gcnew DataTable();
+        this->DA->Fill(this->DS);//remplir le dataset avec la table spécifiée en exécutant la requete de commande
         return this->DS;
     }
 

@@ -48,7 +48,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
@@ -69,6 +69,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label10;
 
 
 
@@ -97,7 +98,6 @@ namespace ProjetG4 {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -118,6 +118,7 @@ namespace ProjetG4 {
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -169,15 +170,6 @@ namespace ProjetG4 {
 			this->textBox4->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->textBox4->Size = System::Drawing::Size(642, 83);
 			this->textBox4->TabIndex = 31;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(142, 52);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(224, 28);
-			this->textBox3->TabIndex = 30;
 			// 
 			// label3
 			// 
@@ -419,6 +411,19 @@ namespace ProjetG4 {
 			this->label8->TabIndex = 42;
 			this->label8->Text = L"Retour";
 			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->label10->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label10->Location = System::Drawing::Point(136, 54);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(143, 31);
+			this->label10->TabIndex = 43;
+			this->label10->Text = L"ID s\'affichera ici!";
+			// 
 			// StockForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -426,6 +431,7 @@ namespace ProjetG4 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(955, 529);
+			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->label9);
@@ -438,7 +444,6 @@ namespace ProjetG4 {
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->dataGridView1);

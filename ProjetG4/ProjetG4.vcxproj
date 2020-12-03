@@ -135,6 +135,11 @@
     <ClCompile Include="Paiement.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="SVC_Gclient.cpp" />
+    <ClCompile Include="SVC_Gcommande.cpp" />
+    <ClCompile Include="SVC_Gemploye.cpp" />
+    <ClCompile Include="SVC_Gstatistique.cpp" />
+    <ClCompile Include="SVC_Gstock.cpp" />
     <ClCompile Include="Ville.cpp" />
     <ClCompile Include="Vivre.cpp" />
   </ItemGroup>
@@ -166,6 +171,11 @@
     <ClInclude Include="Paiement.h" />
     <ClInclude Include="Personne.h" />
     <ClInclude Include="Personnel.h" />
+    <ClInclude Include="SVC_Gclient.h" />
+    <ClInclude Include="SVC_Gcommande.h" />
+    <ClInclude Include="SVC_Gemploye.h" />
+    <ClInclude Include="SVC_Gstatistique.h" />
+    <ClInclude Include="SVC_Gstock.h" />
     <ClInclude Include="Ville.h" />
     <ClInclude Include="Vivre.h" />
   </ItemGroup>

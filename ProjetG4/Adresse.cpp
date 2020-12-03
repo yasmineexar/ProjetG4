@@ -9,18 +9,16 @@ namespace Composant
 	String^ Adresse::SELECT(void)
 	{
 		return "SELECT id_adresse, adresse, Id_ville " +
-			"FROM Adresse " + ");";
+			"FROM Adresse where id_adresse = " + this->ID_Adresse + ";";
 	}
 	String^ Adresse::INSERT(void)
 	{
-		return "INSERT INTO Adresse(adresse, ville) " +
-			"VALUES('" + this->adresse + "', '" + this->Id_Ville + ");select @@IDENTITY;";
+		return "INSERT INTO Adresse(adresse, id_ville) " +
+			"VALUES('" + this->adresse + "'," + this->Id_Ville + ");select id_adresse from adresse where adresse = '" + this->adresse + "'";
 	}
 	String^ Adresse::UPDATE(void)
 	{
-		return "UPDATE Adresse " +
-			"SET ID_Adresse ='" + this->ID_Adresse + "', ville ='" + this->Id_Ville + "',' " +
-			"WHERE(ID_Adresse = " + this->ID_Adresse + "); ";
+		return "UPDATE Adresse SET id_ville =" + this->Id_Ville + ",adresse = '" + this->adresse + "' WHERE ID_Adresse = " + this->ID_Adresse;
 	}
 	String^ Adresse::DELETE(void)
 	{
@@ -52,5 +50,13 @@ namespace Composant
 	int Adresse::getIdVille(void)
 	{
 		return this->Id_Ville;
+	}
+	void Adresse::setIdClient(int id)
+	{
+		this->Id_Client = id;
+	}
+	int Adresse::getIdClient(void)
+	{
+		return this->Id_Client;
 	}
 }
