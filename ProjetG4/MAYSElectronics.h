@@ -175,7 +175,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	ClientForm^ page = gcnew ClientForm(this);
 	this->Hide();
 	page->ShowDialog();
-	}
+}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	CommandeForm^ page = gcnew CommandeForm(this);
 	this->Hide();

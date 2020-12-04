@@ -36,6 +36,7 @@ System::Void ProjetG4::PersonnelForm::btn_afficher_Click(System::Object^ sender,
 	this->dateTimePicker1->Value = DateTime(date->Year, date->Month, date->Day);
 	this->txtbox_adr->Text = this->gpersonnel->adresse->getAdresse();
 	this->boxville->SelectedIndex = boxville->FindString(gpersonnel->ville->getNomVille());
+	PersonnelForm_Load(sender, e);
 	//chiraz heba hlawa
 }
 

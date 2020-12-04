@@ -1,7 +1,6 @@
 #pragma once
 
-namespace ProjetG4 {
-
+namespace ProjetG4{
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;

@@ -1,12 +1,10 @@
 #pragma once
-#include"SVC_Gclient.h" //service
-//composants
+#include"SVC_Gclient.h" 
 #include"Adresse.h"
 #include"Client.h"
-#include"FicheAdresse.h" //une fiche pour la saisie des adresses 
+#include"FicheAdresse.h" 
 
 namespace ProjetG4 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -15,6 +13,7 @@ namespace ProjetG4 {
 	using namespace System::Drawing;
 	using namespace Composant;
 	using namespace Service;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Description résumée de ClientForm
@@ -72,10 +71,10 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ lbl_idaffich;
 
 	private: Service::SVC_Gclient^ gclient = gcnew SVC_Gclient(); //objet pour la gestion du client
-	private: System::Windows::Forms::Button^ button1;
+	private: Composant::Client^ client = gcnew 	Client();
 
-
-	private:
+	
+	private: System::Windows::Forms::Button^ btn_adresse;
 
 	protected:
 
@@ -112,7 +111,7 @@ namespace ProjetG4 {
 			this->date_naisse = (gcnew System::Windows::Forms::DateTimePicker());
 			this->date_pr_achat = (gcnew System::Windows::Forms::DateTimePicker());
 			this->lbl_idaffich = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btn_adresse = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewClient))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -147,13 +146,13 @@ namespace ProjetG4 {
 			this->btn_valider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_valider->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_valider->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_valider->Location = System::Drawing::Point(987, 392);
+			this->btn_valider->Location = System::Drawing::Point(399, 288);
 			this->btn_valider->Name = L"btn_valider";
-			this->btn_valider->Size = System::Drawing::Size(134, 51);
+			this->btn_valider->Size = System::Drawing::Size(722, 51);
 			this->btn_valider->TabIndex = 18;
 			this->btn_valider->Text = L"Valider";
 			this->btn_valider->UseVisualStyleBackColor = false;
-			this->btn_valider->Click += gcnew System::EventHandler(this, &ClientForm::btn_enrg_Click);
+			this->btn_valider->Click += gcnew System::EventHandler(this, &ClientForm::btn_valider_Click);
 			// 
 			// btn_creer
 			// 
@@ -349,19 +348,19 @@ namespace ProjetG4 {
 			this->lbl_idaffich->TabIndex = 41;
 			this->lbl_idaffich->Text = L"ID s\'affichera ici!";
 			// 
-			// button1
+			// btn_adresse
 			// 
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(399, 300);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(171, 51);
-			this->button1->TabIndex = 44;
-			this->button1->Text = L"Adresse Client";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &ClientForm::button1_Click);
+			this->btn_adresse->BackColor = System::Drawing::Color::Transparent;
+			this->btn_adresse->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_adresse->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_adresse->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_adresse->Location = System::Drawing::Point(952, 392);
+			this->btn_adresse->Name = L"btn_adresse";
+			this->btn_adresse->Size = System::Drawing::Size(169, 51);
+			this->btn_adresse->TabIndex = 44;
+			this->btn_adresse->Text = L"Adresse Client";
+			this->btn_adresse->UseVisualStyleBackColor = false;
+			this->btn_adresse->Click += gcnew System::EventHandler(this, &ClientForm::btn_adresse_Click);
 			// 
 			// ClientForm
 			// 
@@ -370,7 +369,7 @@ namespace ProjetG4 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1152, 599);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btn_adresse);
 			this->Controls->Add(this->lbl_idaffich);
 			this->Controls->Add(this->date_pr_achat);
 			this->Controls->Add(this->date_naisse);
@@ -411,10 +410,8 @@ private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^
 private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void btn_enrg_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void btn_valider_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_adresse_Click(System::Object^ sender, System::EventArgs^ e);
+public: System::Void set_client(Composant::Client^);
 };
 }
