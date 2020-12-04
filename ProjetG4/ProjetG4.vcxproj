@@ -123,7 +123,7 @@
     <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="CAD.cpp" />
-    <ClCompile Include="Choisir.cpp" />
+    <ClCompile Include="Ligne_Commande.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="ClientForm.cpp" />
@@ -147,7 +147,7 @@
     <ClInclude Include="Adresse.h" />
     <ClInclude Include="Article.h" />
     <ClInclude Include="CAD.h" />
-    <ClInclude Include="Choisir.h" />
+    <ClInclude Include="Ligne_Commande.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="ClientForm.h">

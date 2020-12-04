@@ -230,9 +230,9 @@ namespace ProjetG4 {
 			this->dgviewDB->Name = L"dgviewDB";
 			this->dgviewDB->RowHeadersWidth = 51;
 			this->dgviewDB->RowTemplate->Height = 24;
+			this->dgviewDB->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dgviewDB->Size = System::Drawing::Size(471, 232);
 			this->dgviewDB->TabIndex = 9;
-			this->dgviewDB->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &PersonnelForm::dgviewDB_CellContentClick);
 			// 
 			// btn_retour
 			// 
@@ -277,7 +277,6 @@ namespace ProjetG4 {
 			this->lbl_id->Size = System::Drawing::Size(30, 31);
 			this->lbl_id->TabIndex = 14;
 			this->lbl_id->Text = L"ID";
-			this->lbl_id->Click += gcnew System::EventHandler(this, &PersonnelForm::lbl_id_Click);
 			// 
 			// txtbox_prenom
 			// 
@@ -288,7 +287,6 @@ namespace ProjetG4 {
 			this->txtbox_prenom->Name = L"txtbox_prenom";
 			this->txtbox_prenom->Size = System::Drawing::Size(224, 34);
 			this->txtbox_prenom->TabIndex = 15;
-			this->txtbox_prenom->TextChanged += gcnew System::EventHandler(this, &PersonnelForm::txtbox_prenom_TextChanged);
 			// 
 			// txt_msg
 			// 
@@ -353,7 +351,6 @@ namespace ProjetG4 {
 			this->lbl_date->Size = System::Drawing::Size(144, 31);
 			this->lbl_date->TabIndex = 20;
 			this->lbl_date->Text = L"Date d\'embauche";
-			this->lbl_date->Click += gcnew System::EventHandler(this, &PersonnelForm::lbl_date_Click);
 			// 
 			// lbl_ville
 			// 
@@ -367,11 +364,6 @@ namespace ProjetG4 {
 			this->lbl_ville->Size = System::Drawing::Size(44, 31);
 			this->lbl_ville->TabIndex = 23;
 			this->lbl_ville->Text = L"Ville";
-			this->lbl_ville->Click += gcnew System::EventHandler(this, &PersonnelForm::lbl_ville_Click);
-			// 
-			// bindingSource1
-			// 
-			this->bindingSource1->CurrentChanged += gcnew System::EventHandler(this, &PersonnelForm::bindingSource1_CurrentChanged);
 			// 
 			// dateTimePicker1
 			// 
@@ -381,7 +373,6 @@ namespace ProjetG4 {
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(311, 30);
 			this->dateTimePicker1->TabIndex = 24;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &PersonnelForm::dateTimePicker1_ValueChanged);
 			// 
 			// lbl_sup
 			// 
@@ -395,7 +386,6 @@ namespace ProjetG4 {
 			this->lbl_sup->Size = System::Drawing::Size(191, 31);
 			this->lbl_sup->TabIndex = 26;
 			this->lbl_sup->Text = L"Supérieur hierarchique";
-			this->lbl_sup->Click += gcnew System::EventHandler(this, &PersonnelForm::lbl_sup_Click);
 			// 
 			// lbl_idaffich
 			// 
@@ -409,7 +399,6 @@ namespace ProjetG4 {
 			this->lbl_idaffich->Size = System::Drawing::Size(143, 31);
 			this->lbl_idaffich->TabIndex = 27;
 			this->lbl_idaffich->Text = L"ID s\'affichera ici!";
-			this->lbl_idaffich->Click += gcnew System::EventHandler(this, &PersonnelForm::lbl_idaffich_Click);
 			// 
 			// checkBox1
 			// 
@@ -421,7 +410,6 @@ namespace ProjetG4 {
 			this->checkBox1->Size = System::Drawing::Size(18, 17);
 			this->checkBox1->TabIndex = 28;
 			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &PersonnelForm::checkBox1_CheckedChanged);
 			// 
 			// boxville
 			// 
@@ -488,10 +476,8 @@ namespace ProjetG4 {
 		}
 #pragma endregion
 	//bouton retour
-private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	retour->Show();
-}
+private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs^ e);
+
 private: System::Void PersonnelForm_Load(System::Object^ sender, System::EventArgs^ e);
 	   //bouton enregistrer
 private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e);
@@ -503,28 +489,6 @@ private: System::Void btn_modifier_Click(System::Object^ sender, System::EventAr
 private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e);
 	   //bouton supprimer
 private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e);
-	   //datagridView 
-private: System::Void dgviewDB_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
-
-private: System::Void txtbox_prenom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void lbl_date_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void lbl_id_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void lbl_ville_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void bindingSource1_CurrentChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void lbl_sup_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void lbl_idaffich_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	 
 };
 }

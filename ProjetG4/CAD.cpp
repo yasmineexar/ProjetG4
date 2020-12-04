@@ -7,7 +7,7 @@ namespace Composant
     {
         this->rq_sql = "RIEN"; //initialiser la requete à RIEN
         //les informations de connexion à la base de données: le serveur; le nom de la BDD; le type de la sécurité
-        this->cnx = "Server=DESKTOP-4VU7GUS; Initial Catalog= DBProjetG4; Integrated Security=SSPI;";
+        this->cnx = "Server = DESKTOP-4VU7GUS; Initial Catalog = DBProjetG4; Integrated Security=SSPI;";
         this->CNX = gcnew SqlConnection(this->cnx);//connexion à la BDD SQL Server
         this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);//Initialise une nouvelle instance de la classe SqlCommand avec le texte de la requete et l'objet CNX
         this->CMD->CommandType = CommandType::Text;//définit le type de la commande à texte

@@ -28,8 +28,8 @@ namespace Service
 		void afficher(int i);
 		void ajouter(String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville, int superieur);
 		void ajouter(String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville);
-		void modifier(String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville);
-		void modifier(String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville, int superieur);
-		void supprimer();
+		void modifier(int,String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville);
+		void modifier(int,String^ nom, String^ prenom, System::DateTime^ date, String^ adresse, String^ ville, int superieur);
+		void supprimer(int);
 	};
 }

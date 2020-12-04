@@ -27,9 +27,6 @@
     <ClCompile Include="Adresse.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
-    <ClCompile Include="Choisir.cpp">
-      <Filter>Couche Composants</Filter>
-    </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
@@ -87,6 +84,9 @@
     <ClCompile Include="SVC_Gstatistique.cpp">
       <Filter>Couche service</Filter>
     </ClCompile>
+    <ClCompile Include="Ligne_Commande.cpp">
+      <Filter>Couche Composants</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MAYSElectronics.h">
@@ -96,9 +96,6 @@
       <Filter>Couche Composants</Filter>
     </ClInclude>
     <ClInclude Include="CAD.h">
-      <Filter>Couche Composants</Filter>
-    </ClInclude>
-    <ClInclude Include="Choisir.h">
       <Filter>Couche Composants</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
@@ -154,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="SVC_Gstatistique.h">
       <Filter>Couche service</Filter>
+    </ClInclude>
+    <ClInclude Include="Ligne_Commande.h">
+      <Filter>Couche Composants</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
