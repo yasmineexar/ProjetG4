@@ -225,13 +225,13 @@ namespace ProjetG4 {
 			// 
 			this->dgviewDB->BackgroundColor = System::Drawing::Color::White;
 			this->dgviewDB->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgviewDB->Location = System::Drawing::Point(423, 69);
+			this->dgviewDB->Location = System::Drawing::Point(401, 69);
 			this->dgviewDB->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgviewDB->Name = L"dgviewDB";
 			this->dgviewDB->RowHeadersWidth = 51;
 			this->dgviewDB->RowTemplate->Height = 24;
 			this->dgviewDB->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dgviewDB->Size = System::Drawing::Size(471, 232);
+			this->dgviewDB->Size = System::Drawing::Size(493, 232);
 			this->dgviewDB->TabIndex = 9;
 			// 
 			// btn_retour
@@ -437,7 +437,7 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(951, 601);
+			this->ClientSize = System::Drawing::Size(955, 601);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->boxville);
 			this->Controls->Add(this->checkBox1);

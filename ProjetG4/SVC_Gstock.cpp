@@ -51,15 +51,15 @@ namespace Service
 		this->article->setQuantite_en_Stock(Quantite_en_Stock);
 		this->article->setSeuil_de_reapprovisionnement(Seuil);
 		this->article->SetCouleur(Couleur);
-		this->cad->actionRows("BEGIN TRAN");
+		//this->cad->actionRows("BEGIN TRAN");
 		this->cad->actionRows(this->article->UPDATE());
-		this->cad->actionRows("COMMIT");
+		//this->cad->actionRows("COMMIT");
 	}
 	void SVC_Gstock::supprimer(int ID_Article)
 	{
 		this->article->SetID_article(ID_Article);
-		this->cad->actionRows("BEGIN TRAN");
+		//this->cad->actionRows("BEGIN TRAN");
 		this->cad->actionRows(this->article->DELETE());
-		this->cad->actionRows("COMMIT TRAN");
+		//this->cad->actionRows("COMMIT TRAN");
 	}
 }
