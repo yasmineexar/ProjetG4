@@ -123,6 +123,7 @@
     <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="CAD.cpp" />
+    <ClCompile Include="FicheAdresse.cpp" />
     <ClCompile Include="Ligne_Commande.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
@@ -147,6 +148,9 @@
     <ClInclude Include="Adresse.h" />
     <ClInclude Include="Article.h" />
     <ClInclude Include="CAD.h" />
+    <ClInclude Include="FicheAdresse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Ligne_Commande.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
@@ -185,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommandeForm.resx">
       <DependentUpon>CommandeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicheAdresse.resx">
+      <DependentUpon>FicheAdresse.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonnelForm.resx">
       <DependentUpon>PersonnelForm.h</DependentUpon>

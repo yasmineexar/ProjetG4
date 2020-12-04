@@ -9,6 +9,7 @@ System::Void ProjetG4::PersonnelForm::btn_retour_Click(System::Object^ sender, S
 
 System::Void ProjetG4::PersonnelForm::PersonnelForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	this->txt_msg->Text = "Bienvenue à la gestion du personnel";
 	//chargement de la liste du personnel dans la datagridView
 	dgviewDB->DataSource = this->gpersonnel->listeemploye();
 	this->comboBox1->DataSource = this->gpersonnel->cad->getRows("SELECT Id_personnel, CONCAT(nom_P,' ',prenom_P) as employe from personnel");

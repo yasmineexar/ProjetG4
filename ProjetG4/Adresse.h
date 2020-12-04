@@ -14,8 +14,12 @@ namespace Composant
 	public:
 		Adresse(void);
 		String^ SELECT(void);
+		String^ SELECTbyid(void);
+		String^ SELECTbyidclient(void);
 		String^ INSERT(void);
+		String^ INSERTclient();
 		String^ UPDATE(void);
+		String^ UPDATEclient(void);
 		String^ DELETE(void);
 		void setIdAdresse(int);
 		void setAdresse(String^);

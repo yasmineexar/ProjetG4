@@ -1,4 +1,9 @@
 #pragma once
+#include"SVC_Gclient.h" //service
+//composants
+#include"Adresse.h"
+#include"Client.h"
+#include"FicheAdresse.h" //une fiche pour la saisie des adresses 
 
 namespace ProjetG4 {
 
@@ -8,6 +13,8 @@ namespace ProjetG4 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Composant;
+	using namespace Service;
 
 	/// <summary>
 	/// Description résumée de ClientForm
@@ -45,64 +52,30 @@ namespace ProjetG4 {
 		}
 	private: System::Windows::Forms::Button^ btn_retour;
 	private: System::Windows::Forms::DataGridView^ dgViewClient;
+	private: System::Windows::Forms::Button^ btn_valider;
 	protected:
-
-
-
-	private: System::Windows::Forms::Button^ btn_enrg;
-
 	private: System::Windows::Forms::Button^ btn_creer;
 	private: System::Windows::Forms::Button^ btn_modifier;
 	private: System::Windows::Forms::Button^ btn_afficher;
 	private: System::Windows::Forms::Button^ btn_supprimer;
-
-
-
-
 	private: System::Windows::Forms::Label^ lbl_prachat;
-
-
 	private: System::Windows::Forms::Label^ lbl_idclient;
 	private: System::Windows::Forms::TextBox^ txt_prenom;
-
-
-
 	private: System::Windows::Forms::TextBox^ txt_nom;
-
 	private: System::Windows::Forms::Label^ lbl_prenom;
-
 	private: System::Windows::Forms::Label^ lbl_nom;
-	private: System::Windows::Forms::TextBox^ txt_adrFact;
-
-
-	private: System::Windows::Forms::Label^ adrFact;
-
 	private: System::Windows::Forms::Label^ lblretour;
-	private: System::Windows::Forms::TextBox^ txt_adrLiv;
-
-
-	private: System::Windows::Forms::Label^ adrLiv;
-
-
 	private: System::Windows::Forms::Label^ lbl_date_naiss;
-
-
-
 	private: System::Windows::Forms::TextBox^ msg_txt;
-
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::DateTimePicker^ date_naisse;
+	private: System::Windows::Forms::DateTimePicker^ date_pr_achat;
 	private: System::Windows::Forms::Label^ lbl_idaffich;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
+
+	private: Service::SVC_Gclient^ gclient = gcnew SVC_Gclient(); //objet pour la gestion du client
+	private: System::Windows::Forms::Button^ button1;
 
 
-
-
-
-
-
-
+	private:
 
 	protected:
 
@@ -122,7 +95,7 @@ namespace ProjetG4 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ClientForm::typeid));
 			this->btn_retour = (gcnew System::Windows::Forms::Button());
 			this->dgViewClient = (gcnew System::Windows::Forms::DataGridView());
-			this->btn_enrg = (gcnew System::Windows::Forms::Button());
+			this->btn_valider = (gcnew System::Windows::Forms::Button());
 			this->btn_creer = (gcnew System::Windows::Forms::Button());
 			this->btn_modifier = (gcnew System::Windows::Forms::Button());
 			this->btn_afficher = (gcnew System::Windows::Forms::Button());
@@ -133,18 +106,13 @@ namespace ProjetG4 {
 			this->txt_nom = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_prenom = (gcnew System::Windows::Forms::Label());
 			this->lbl_nom = (gcnew System::Windows::Forms::Label());
-			this->txt_adrFact = (gcnew System::Windows::Forms::TextBox());
-			this->adrFact = (gcnew System::Windows::Forms::Label());
 			this->lblretour = (gcnew System::Windows::Forms::Label());
-			this->txt_adrLiv = (gcnew System::Windows::Forms::TextBox());
-			this->adrLiv = (gcnew System::Windows::Forms::Label());
 			this->lbl_date_naiss = (gcnew System::Windows::Forms::Label());
 			this->msg_txt = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->date_naisse = (gcnew System::Windows::Forms::DateTimePicker());
+			this->date_pr_achat = (gcnew System::Windows::Forms::DateTimePicker());
 			this->lbl_idaffich = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewClient))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -166,27 +134,26 @@ namespace ProjetG4 {
 			// 
 			this->dgViewClient->BackgroundColor = System::Drawing::Color::White;
 			this->dgViewClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgViewClient->Location = System::Drawing::Point(399, 59);
+			this->dgViewClient->Location = System::Drawing::Point(399, 62);
 			this->dgViewClient->Name = L"dgViewClient";
 			this->dgViewClient->RowHeadersWidth = 51;
 			this->dgViewClient->RowTemplate->Height = 24;
-			this->dgViewClient->Size = System::Drawing::Size(510, 141);
+			this->dgViewClient->Size = System::Drawing::Size(722, 212);
 			this->dgViewClient->TabIndex = 13;
-			this->dgViewClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ClientForm::dgViewClient_CellContentClick);
 			// 
-			// btn_enrg
+			// btn_valider
 			// 
-			this->btn_enrg->BackColor = System::Drawing::Color::Transparent;
-			this->btn_enrg->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_enrg->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->btn_enrg->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_enrg->Location = System::Drawing::Point(775, 358);
-			this->btn_enrg->Name = L"btn_enrg";
-			this->btn_enrg->Size = System::Drawing::Size(134, 51);
-			this->btn_enrg->TabIndex = 18;
-			this->btn_enrg->Text = L"Enregistrer";
-			this->btn_enrg->UseVisualStyleBackColor = false;
-			this->btn_enrg->Click += gcnew System::EventHandler(this, &ClientForm::btn_enrg_Click);
+			this->btn_valider->BackColor = System::Drawing::Color::Transparent;
+			this->btn_valider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_valider->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_valider->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_valider->Location = System::Drawing::Point(987, 392);
+			this->btn_valider->Name = L"btn_valider";
+			this->btn_valider->Size = System::Drawing::Size(134, 51);
+			this->btn_valider->TabIndex = 18;
+			this->btn_valider->Text = L"Valider";
+			this->btn_valider->UseVisualStyleBackColor = false;
+			this->btn_valider->Click += gcnew System::EventHandler(this, &ClientForm::btn_enrg_Click);
 			// 
 			// btn_creer
 			// 
@@ -194,7 +161,7 @@ namespace ProjetG4 {
 			this->btn_creer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_creer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_creer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_creer->Location = System::Drawing::Point(26, 358);
+			this->btn_creer->Location = System::Drawing::Point(26, 392);
 			this->btn_creer->Name = L"btn_creer";
 			this->btn_creer->Size = System::Drawing::Size(134, 51);
 			this->btn_creer->TabIndex = 17;
@@ -207,7 +174,7 @@ namespace ProjetG4 {
 			this->btn_modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_modifier->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_modifier->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_modifier->Location = System::Drawing::Point(214, 358);
+			this->btn_modifier->Location = System::Drawing::Point(237, 392);
 			this->btn_modifier->Name = L"btn_modifier";
 			this->btn_modifier->Size = System::Drawing::Size(134, 51);
 			this->btn_modifier->TabIndex = 16;
@@ -220,7 +187,7 @@ namespace ProjetG4 {
 			this->btn_afficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_afficher->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_afficher->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_afficher->Location = System::Drawing::Point(399, 358);
+			this->btn_afficher->Location = System::Drawing::Point(471, 392);
 			this->btn_afficher->Name = L"btn_afficher";
 			this->btn_afficher->Size = System::Drawing::Size(134, 51);
 			this->btn_afficher->TabIndex = 15;
@@ -234,7 +201,7 @@ namespace ProjetG4 {
 			this->btn_supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_supprimer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_supprimer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_supprimer->Location = System::Drawing::Point(585, 358);
+			this->btn_supprimer->Location = System::Drawing::Point(730, 392);
 			this->btn_supprimer->Name = L"btn_supprimer";
 			this->btn_supprimer->Size = System::Drawing::Size(134, 51);
 			this->btn_supprimer->TabIndex = 14;
@@ -312,31 +279,6 @@ namespace ProjetG4 {
 			this->lbl_nom->TabIndex = 19;
 			this->lbl_nom->Text = L"Nom";
 			// 
-			// txt_adrFact
-			// 
-			this->txt_adrFact->BackColor = System::Drawing::Color::White;
-			this->txt_adrFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_adrFact->Location = System::Drawing::Point(399, 308);
-			this->txt_adrFact->Multiline = true;
-			this->txt_adrFact->Name = L"txt_adrFact";
-			this->txt_adrFact->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->txt_adrFact->Size = System::Drawing::Size(384, 34);
-			this->txt_adrFact->TabIndex = 28;
-			// 
-			// adrFact
-			// 
-			this->adrFact->AutoSize = true;
-			this->adrFact->BackColor = System::Drawing::Color::Transparent;
-			this->adrFact->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->adrFact->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->adrFact->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->adrFact->Location = System::Drawing::Point(393, 272);
-			this->adrFact->Name = L"adrFact";
-			this->adrFact->Size = System::Drawing::Size(187, 31);
-			this->adrFact->TabIndex = 27;
-			this->adrFact->Text = L"Adresse de facturation";
-			// 
 			// lblretour
 			// 
 			this->lblretour->AutoSize = true;
@@ -350,31 +292,6 @@ namespace ProjetG4 {
 			this->lblretour->Size = System::Drawing::Size(50, 24);
 			this->lblretour->TabIndex = 29;
 			this->lblretour->Text = L"Retour";
-			// 
-			// txt_adrLiv
-			// 
-			this->txt_adrLiv->BackColor = System::Drawing::Color::White;
-			this->txt_adrLiv->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_adrLiv->Location = System::Drawing::Point(399, 237);
-			this->txt_adrLiv->Multiline = true;
-			this->txt_adrLiv->Name = L"txt_adrLiv";
-			this->txt_adrLiv->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->txt_adrLiv->Size = System::Drawing::Size(384, 34);
-			this->txt_adrLiv->TabIndex = 30;
-			// 
-			// adrLiv
-			// 
-			this->adrLiv->AutoSize = true;
-			this->adrLiv->BackColor = System::Drawing::Color::Transparent;
-			this->adrLiv->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->adrLiv->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->adrLiv->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->adrLiv->Location = System::Drawing::Point(393, 203);
-			this->adrLiv->Name = L"adrLiv";
-			this->adrLiv->Size = System::Drawing::Size(172, 31);
-			this->adrLiv->TabIndex = 33;
-			this->adrLiv->Text = L"Adresse de livraison";
 			// 
 			// lbl_date_naiss
 			// 
@@ -394,30 +311,30 @@ namespace ProjetG4 {
 			this->msg_txt->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->msg_txt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->msg_txt->Location = System::Drawing::Point(26, 423);
+			this->msg_txt->Location = System::Drawing::Point(26, 477);
 			this->msg_txt->Multiline = true;
 			this->msg_txt->Name = L"msg_txt";
 			this->msg_txt->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->msg_txt->Size = System::Drawing::Size(693, 83);
+			this->msg_txt->Size = System::Drawing::Size(838, 83);
 			this->msg_txt->TabIndex = 38;
 			// 
-			// dateTimePicker1
+			// date_naisse
 			// 
-			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->date_naisse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(26, 241);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(322, 30);
-			this->dateTimePicker1->TabIndex = 39;
+			this->date_naisse->Location = System::Drawing::Point(26, 241);
+			this->date_naisse->Name = L"date_naisse";
+			this->date_naisse->Size = System::Drawing::Size(322, 30);
+			this->date_naisse->TabIndex = 39;
 			// 
-			// dateTimePicker2
+			// date_pr_achat
 			// 
-			this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->date_pr_achat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker2->Location = System::Drawing::Point(26, 309);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(322, 30);
-			this->dateTimePicker2->TabIndex = 40;
+			this->date_pr_achat->Location = System::Drawing::Point(26, 309);
+			this->date_pr_achat->Name = L"date_pr_achat";
+			this->date_pr_achat->Size = System::Drawing::Size(322, 30);
+			this->date_pr_achat->TabIndex = 40;
 			// 
 			// lbl_idaffich
 			// 
@@ -432,25 +349,19 @@ namespace ProjetG4 {
 			this->lbl_idaffich->TabIndex = 41;
 			this->lbl_idaffich->Text = L"ID s\'affichera ici!";
 			// 
-			// comboBox1
+			// button1
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(798, 237);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(111, 33);
-			this->comboBox1->TabIndex = 42;
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(798, 308);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(111, 33);
-			this->comboBox2->TabIndex = 43;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button1->Location = System::Drawing::Point(399, 300);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(171, 51);
+			this->button1->TabIndex = 44;
+			this->button1->Text = L"Adresse Client";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ClientForm::button1_Click);
 			// 
 			// ClientForm
 			// 
@@ -458,26 +369,21 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(955, 529);
-			this->Controls->Add(this->comboBox2);
-			this->Controls->Add(this->comboBox1);
+			this->ClientSize = System::Drawing::Size(1152, 599);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->lbl_idaffich);
-			this->Controls->Add(this->dateTimePicker2);
-			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->date_pr_achat);
+			this->Controls->Add(this->date_naisse);
 			this->Controls->Add(this->msg_txt);
 			this->Controls->Add(this->lbl_date_naiss);
-			this->Controls->Add(this->adrLiv);
-			this->Controls->Add(this->txt_adrLiv);
 			this->Controls->Add(this->lblretour);
-			this->Controls->Add(this->txt_adrFact);
-			this->Controls->Add(this->adrFact);
 			this->Controls->Add(this->lbl_prachat);
 			this->Controls->Add(this->lbl_idclient);
 			this->Controls->Add(this->txt_prenom);
 			this->Controls->Add(this->txt_nom);
 			this->Controls->Add(this->lbl_prenom);
 			this->Controls->Add(this->lbl_nom);
-			this->Controls->Add(this->btn_enrg);
+			this->Controls->Add(this->btn_valider);
 			this->Controls->Add(this->btn_creer);
 			this->Controls->Add(this->btn_modifier);
 			this->Controls->Add(this->btn_afficher);
@@ -486,8 +392,6 @@ namespace ProjetG4 {
 			this->Controls->Add(this->btn_retour);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MaximumSize = System::Drawing::Size(973, 576);
-			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"ClientForm";
 			this->Text = L"ClientForm";
 			this->Load += gcnew System::EventHandler(this, &ClientForm::ClientForm_Load);
@@ -497,24 +401,20 @@ namespace ProjetG4 {
 
 		}
 #pragma endregion
-private: System::Void ClientForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void ClientForm_Load(System::Object^ sender, System::EventArgs^ e);
 	   //bouton retour
 private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		retour2->Show();
 }
-private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_enrg_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btn_enrg_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dgViewClient_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

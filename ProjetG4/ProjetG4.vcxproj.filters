@@ -87,6 +87,9 @@
     <ClCompile Include="Ligne_Commande.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
+    <ClCompile Include="FicheAdresse.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MAYSElectronics.h">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="Ligne_Commande.h">
       <Filter>Couche Composants</Filter>
+    </ClInclude>
+    <ClInclude Include="FicheAdresse.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

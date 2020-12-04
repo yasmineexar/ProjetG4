@@ -18,7 +18,7 @@ namespace Service
 		DataTable^ ds;
 		void adressesemploye();
 	public:
-		Composant::CAD^ cad;
+		Composant::CAD^ cad; //connexion a la bdd
 		Composant::Personnel^ personnel;
 		Composant::Adresse^ adresse;
 		Composant::Ville^ ville;
