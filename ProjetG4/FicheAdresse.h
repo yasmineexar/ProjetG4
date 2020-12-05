@@ -252,8 +252,11 @@ namespace ProjetG4 {
 			this->Controls->Add(this->dataGridView1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximumSize = System::Drawing::Size(971, 557);
+			this->MinimumSize = System::Drawing::Size(971, 557);
 			this->Name = L"FicheAdresse";
 			this->Text = L"FicheAdresse";
+			this->Load += gcnew System::EventHandler(this, &FicheAdresse::FicheAdresse_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -269,5 +272,6 @@ private: System::Void btn_creeradr_Click(System::Object^ sender, System::EventAr
 private: System::Void btn_valider_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_modifieradr_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void FicheAdresse_Load(System::Object^ sender, System::EventArgs^ e){}
 };
 }

@@ -134,9 +134,13 @@ namespace ProjetG4 {
 			this->dgViewClient->BackgroundColor = System::Drawing::Color::White;
 			this->dgViewClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgViewClient->Location = System::Drawing::Point(399, 62);
+			this->dgViewClient->MultiSelect = false;
 			this->dgViewClient->Name = L"dgViewClient";
+			this->dgViewClient->ReadOnly = true;
+			this->dgViewClient->RowHeadersVisible = false;
 			this->dgViewClient->RowHeadersWidth = 51;
 			this->dgViewClient->RowTemplate->Height = 24;
+			this->dgViewClient->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dgViewClient->Size = System::Drawing::Size(722, 212);
 			this->dgViewClient->TabIndex = 13;
 			// 

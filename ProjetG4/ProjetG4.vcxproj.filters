@@ -33,9 +33,6 @@
     <ClCompile Include="Commande.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
-    <ClCompile Include="Paiement.cpp">
-      <Filter>Couche Composants</Filter>
-    </ClCompile>
     <ClCompile Include="Personne.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
@@ -87,7 +84,10 @@
     <ClCompile Include="FicheAdresse.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="contient.cpp">
+    <ClCompile Include="FicheCommande.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Choisir.cpp">
       <Filter>Couche Composants</Filter>
     </ClCompile>
   </ItemGroup>
@@ -105,9 +105,6 @@
       <Filter>Couche Composants</Filter>
     </ClInclude>
     <ClInclude Include="Commande.h">
-      <Filter>Couche Composants</Filter>
-    </ClInclude>
-    <ClInclude Include="Paiement.h">
       <Filter>Couche Composants</Filter>
     </ClInclude>
     <ClInclude Include="Personne.h">
@@ -158,7 +155,10 @@
     <ClInclude Include="FicheAdresse.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="contient.h">
+    <ClInclude Include="FicheCommande.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Choisir.h">
       <Filter>Couche Composants</Filter>
     </ClInclude>
   </ItemGroup>

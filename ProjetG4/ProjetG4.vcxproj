@@ -124,16 +124,16 @@
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="CAD.cpp" />
     <ClCompile Include="FicheAdresse.cpp" />
-    <ClCompile Include="contient.cpp" />
+    <ClCompile Include="Choisir.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="ClientForm.cpp" />
     <ClCompile Include="CommandeForm.cpp" />
+    <ClCompile Include="FicheCommande.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
     <ClCompile Include="StatistiqueForm.cpp" />
     <ClCompile Include="StockForm.cpp" />
     <ClCompile Include="MAYSElectronics.cpp" />
-    <ClCompile Include="Paiement.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="SVC_Gclient.cpp" />
@@ -151,13 +151,16 @@
     <ClInclude Include="FicheAdresse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="contient.h" />
+    <ClInclude Include="Choisir.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="ClientForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CommandeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FicheCommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PersonnelForm.h">
@@ -172,7 +175,6 @@
     <ClInclude Include="MAYSElectronics.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Paiement.h" />
     <ClInclude Include="Personne.h" />
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="SVC_Gclient.h" />
@@ -192,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicheAdresse.resx">
       <DependentUpon>FicheAdresse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicheCommande.resx">
+      <DependentUpon>FicheCommande.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonnelForm.resx">
       <DependentUpon>PersonnelForm.h</DependentUpon>

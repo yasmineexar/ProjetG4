@@ -46,7 +46,7 @@ System::Void ProjetG4::ClientForm::btn_supprimer_Click(System::Object^ sender, S
 
 System::Void ProjetG4::ClientForm::btn_valider_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	return System::Void();
+	this->Close();
 }
 
 System::Void ProjetG4::ClientForm::btn_adresse_Click(System::Object^ sender, System::EventArgs^ e)

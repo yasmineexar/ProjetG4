@@ -15,7 +15,7 @@ namespace Service {
 	public:
 		SVC_Gstock();
 		Composant::Article^ get_article();
-		DataTable^ listestock();
+		DataTable^ listestock(); //la liste de tous les articles
 		void afficher(int);
 		void ajouter(String^,String^ ,float, float, int, int, String^);
 		void modifier(int, String^, String^, float, float, int, int, String^);

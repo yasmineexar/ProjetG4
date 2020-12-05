@@ -46,10 +46,16 @@ System::Void ProjetG4::FicheAdresse::btn_modifieradr_Click(System::Object^ sende
 	this->dataGridView1->SelectedRows[0]->Cells[2]->Value = this->boxVille->Text;
 }
 
+//bouton supprimer adresse
 System::Void ProjetG4::FicheAdresse::button3_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->supradr->Add(Convert::ToInt32(this->dataGridView1->SelectedRows[0]->Cells[0]->Value));
-	this->dataGridView1->Rows->Remove(dataGridView1->SelectedRows[0]);
+	if (MessageBox::Show("Etes-vous sur de vouloir supprimer ?", "Valider la suppresion", System::Windows::Forms::MessageBoxButtons::YesNo) == System::Windows::Forms::DialogResult::Yes) {
+		this->supradr->Add(Convert::ToInt32(this->dataGridView1->SelectedRows[0]->Cells[0]->Value));
+		this->dataGridView1->Rows->Remove(dataGridView1->SelectedRows[0]);
+	}
+	else {
+		FicheAdresse_Load(sender, e);
+	}
 }
 
 

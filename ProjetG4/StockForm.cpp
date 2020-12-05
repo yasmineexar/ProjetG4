@@ -7,7 +7,7 @@ System::Void ProjetG4::StockForm::StockForm_Load(System::Object^ sender, System:
 
 System::Void ProjetG4::StockForm::btn_valider_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    return System::Void();
+    this->Close();
 }
 
 System::Void ProjetG4::StockForm::btn_creer_Click(System::Object^ sender, System::EventArgs^ e)
