@@ -166,6 +166,7 @@ namespace ProjetG4 {
 			this->btn_creer->TabIndex = 17;
 			this->btn_creer->Text = L"Créer";
 			this->btn_creer->UseVisualStyleBackColor = false;
+			this->btn_creer->Click += gcnew System::EventHandler(this, &ClientForm::btn_creer_Click);
 			// 
 			// btn_modifier
 			// 
@@ -179,6 +180,7 @@ namespace ProjetG4 {
 			this->btn_modifier->TabIndex = 16;
 			this->btn_modifier->Text = L"Modifier";
 			this->btn_modifier->UseVisualStyleBackColor = false;
+			this->btn_modifier->Click += gcnew System::EventHandler(this, &ClientForm::btn_modifier_Click);
 			// 
 			// btn_afficher
 			// 
@@ -413,5 +415,6 @@ private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventA
 private: System::Void btn_valider_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_adresse_Click(System::Object^ sender, System::EventArgs^ e);
 public: System::Void set_client(Composant::Client^);
+
 };
 }

@@ -2,6 +2,9 @@
 
 System::Void ProjetG4::ClientForm::ClientForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->dgViewClient->DataSource = this->gclient->listeclients();//afficher la liste des clients dans le datagridview
+	this->msg_txt->Text = "Bienvenue à la Gestion du client \n Pour créer un client, veuillez remplir les champs puis cliquez sur le bouton Créer"
+		+ "\n Pour modifier un client, selectionnez depuis la table, cliquez afficher, remplissez les champs et enfin cliquez sur le bouton modifier"
+		+ "\nPour modifier un client, selectionnez depuis la table etcliquez sur le bouton supprimer";
 }
 
 System::Void ProjetG4::ClientForm::btn_afficher_Click(System::Object^ sender, System::EventArgs^ e)
@@ -12,17 +15,36 @@ System::Void ProjetG4::ClientForm::btn_afficher_Click(System::Object^ sender, Sy
 }
 System::Void ProjetG4::ClientForm::btn_creer_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	return System::Void();
+	FicheAdresse^ page = gcnew FicheAdresse(this);
+	page->set_combo_ville(this->gclient->listeville());
+	page->set_adresses(this->gclient->get_adrclient());
+	ProjetG4::ClientForm::Hide();
+	page->ShowDialog();
+	this->gclient->ajouter(txt_nom->Text,txt_prenom->Text,date_naisse->Value,date_pr_achat->Value,page->get_adresse_dg());
+	ClientForm_Load(sender, e);
 }
 
 System::Void ProjetG4::ClientForm::btn_modifier_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	return System::Void();
+	FicheAdresse^ page = gcnew FicheAdresse(this);
+	page->set_combo_ville(this->gclient->listeville());
+	page->set_adresses(this->gclient->get_adrclient());
+	ProjetG4::ClientForm::Hide();
+	page->ShowDialog();
+	this->gclient->modifier(Convert::ToInt32(lbl_idaffich->Text), txt_nom->Text, txt_prenom->Text, date_naisse->Value, date_pr_achat->Value, page->get_adresse_dg(),page->supradr);
+	ClientForm_Load(sender, e);
 }
 
 System::Void ProjetG4::ClientForm::btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	return System::Void();
+	if (MessageBox::Show("Etes-vous sur de vouloir supprimer ?","Valider la suppresion", System::Windows::Forms::MessageBoxButtons::YesNo) == System::Windows::Forms::DialogResult::Yes) {
+		this->gclient->supprimer(Convert::ToInt32(this->dgViewClient->SelectedRows[0]->Cells[0]->Value));
+		FicheAdresse^ page = gcnew FicheAdresse(this);
+		ClientForm_Load(sender, e);
+	}
+	else {
+		ClientForm_Load(sender, e);
+	}
 }
 
 System::Void ProjetG4::ClientForm::btn_valider_Click(System::Object^ sender, System::EventArgs^ e)
@@ -33,6 +55,8 @@ System::Void ProjetG4::ClientForm::btn_valider_Click(System::Object^ sender, Sys
 System::Void ProjetG4::ClientForm::btn_adresse_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	FicheAdresse^ page = gcnew FicheAdresse(this);
+	page->set_combo_ville(this->gclient->listeville());
+	page->set_adresses(this->gclient->get_adrclient());
 	ProjetG4::ClientForm::Hide();
 	page->ShowDialog(); 
 }
