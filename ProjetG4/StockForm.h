@@ -56,7 +56,8 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ lbl_couleur;
 	private: System::Windows::Forms::TextBox^ txt_msg;
 	private: System::Windows::Forms::Label^ lbl_id;
-	private: System::Windows::Forms::Button^ btn_enregistrer;
+	private: System::Windows::Forms::Button^ btn_valider;
+
 	private: System::Windows::Forms::DataGridView^ dgViewArticle;
 	private: System::Windows::Forms::TextBox^ txt_nom;
 	private: System::Windows::Forms::TextBox^ txt_ref;
@@ -68,7 +69,7 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Button^ btn_supprimer;
 	private: System::Windows::Forms::TextBox^ txt_TTC;
 	private: System::Windows::Forms::Label^ lbl_qnt;
-	private: System::Windows::Forms::TextBox^ txt_quantite;
+
 	private: System::Windows::Forms::Label^ lbl_prixTTC;
 	private: System::Windows::Forms::TextBox^ txt_PrixHt;
 	private: System::Windows::Forms::Label^ lbl_prixHT;
@@ -76,9 +77,12 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::Label^ lbl_TVA;
 	private: System::Windows::Forms::Label^ lbl_retour;
 	private: System::Windows::Forms::Label^ lbl_idaffich;
-
+		   //declaration des objets composant et service
 	private: Service::SVC_Gstock^ garticle = gcnew SVC_Gstock();
 	private: Composant::Article^ article = gcnew  Composant::Article();
+	private: System::Windows::Forms::NumericUpDown^ num_qnt;
+	private: System::Windows::Forms::NumericUpDown^ num_seuil;
+	private: System::Windows::Forms::Label^ lbl_seuil;
 
 	protected:
 
@@ -101,7 +105,7 @@ namespace ProjetG4 {
 			this->lbl_couleur = (gcnew System::Windows::Forms::Label());
 			this->txt_msg = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_id = (gcnew System::Windows::Forms::Label());
-			this->btn_enregistrer = (gcnew System::Windows::Forms::Button());
+			this->btn_valider = (gcnew System::Windows::Forms::Button());
 			this->dgViewArticle = (gcnew System::Windows::Forms::DataGridView());
 			this->txt_nom = (gcnew System::Windows::Forms::TextBox());
 			this->txt_ref = (gcnew System::Windows::Forms::TextBox());
@@ -113,7 +117,6 @@ namespace ProjetG4 {
 			this->btn_supprimer = (gcnew System::Windows::Forms::Button());
 			this->txt_TTC = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_qnt = (gcnew System::Windows::Forms::Label());
-			this->txt_quantite = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_prixTTC = (gcnew System::Windows::Forms::Label());
 			this->txt_PrixHt = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_prixHT = (gcnew System::Windows::Forms::Label());
@@ -121,7 +124,12 @@ namespace ProjetG4 {
 			this->lbl_TVA = (gcnew System::Windows::Forms::Label());
 			this->lbl_retour = (gcnew System::Windows::Forms::Label());
 			this->lbl_idaffich = (gcnew System::Windows::Forms::Label());
+			this->num_qnt = (gcnew System::Windows::Forms::NumericUpDown());
+			this->num_seuil = (gcnew System::Windows::Forms::NumericUpDown());
+			this->lbl_seuil = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewArticle))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_qnt))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_seuil))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btn_retour
@@ -166,7 +174,7 @@ namespace ProjetG4 {
 			this->txt_msg->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->txt_msg->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_msg->Location = System::Drawing::Point(50, 415);
+			this->txt_msg->Location = System::Drawing::Point(50, 470);
 			this->txt_msg->Multiline = true;
 			this->txt_msg->Name = L"txt_msg";
 			this->txt_msg->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
@@ -186,28 +194,33 @@ namespace ProjetG4 {
 			this->lbl_id->TabIndex = 29;
 			this->lbl_id->Text = L"ID";
 			// 
-			// btn_enregistrer
+			// btn_valider
 			// 
-			this->btn_enregistrer->BackColor = System::Drawing::Color::Transparent;
-			this->btn_enregistrer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_enregistrer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->btn_enregistrer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_enregistrer->Location = System::Drawing::Point(775, 339);
-			this->btn_enregistrer->Name = L"btn_enregistrer";
-			this->btn_enregistrer->Size = System::Drawing::Size(134, 51);
-			this->btn_enregistrer->TabIndex = 28;
-			this->btn_enregistrer->Text = L"Enregistrer";
-			this->btn_enregistrer->UseVisualStyleBackColor = false;
+			this->btn_valider->BackColor = System::Drawing::Color::Transparent;
+			this->btn_valider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_valider->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_valider->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_valider->Location = System::Drawing::Point(868, 394);
+			this->btn_valider->Name = L"btn_valider";
+			this->btn_valider->Size = System::Drawing::Size(134, 51);
+			this->btn_valider->TabIndex = 28;
+			this->btn_valider->Text = L"Valider";
+			this->btn_valider->UseVisualStyleBackColor = false;
+			this->btn_valider->Click += gcnew System::EventHandler(this, &StockForm::btn_valider_Click);
 			// 
 			// dgViewArticle
 			// 
 			this->dgViewArticle->BackgroundColor = System::Drawing::Color::White;
 			this->dgViewArticle->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgViewArticle->Location = System::Drawing::Point(414, 52);
+			this->dgViewArticle->MultiSelect = false;
 			this->dgViewArticle->Name = L"dgViewArticle";
+			this->dgViewArticle->ReadOnly = true;
+			this->dgViewArticle->RowHeadersVisible = false;
 			this->dgViewArticle->RowHeadersWidth = 51;
 			this->dgViewArticle->RowTemplate->Height = 24;
-			this->dgViewArticle->Size = System::Drawing::Size(494, 185);
+			this->dgViewArticle->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->dgViewArticle->Size = System::Drawing::Size(588, 238);
 			this->dgViewArticle->TabIndex = 27;
 			// 
 			// txt_nom
@@ -260,7 +273,7 @@ namespace ProjetG4 {
 			this->btn_creer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_creer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_creer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_creer->Location = System::Drawing::Point(50, 339);
+			this->btn_creer->Location = System::Drawing::Point(50, 394);
 			this->btn_creer->Name = L"btn_creer";
 			this->btn_creer->Size = System::Drawing::Size(134, 51);
 			this->btn_creer->TabIndex = 22;
@@ -274,7 +287,7 @@ namespace ProjetG4 {
 			this->btn_modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_modifier->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_modifier->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_modifier->Location = System::Drawing::Point(233, 339);
+			this->btn_modifier->Location = System::Drawing::Point(233, 394);
 			this->btn_modifier->Name = L"btn_modifier";
 			this->btn_modifier->Size = System::Drawing::Size(134, 51);
 			this->btn_modifier->TabIndex = 21;
@@ -288,7 +301,7 @@ namespace ProjetG4 {
 			this->btn_afficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_afficher->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_afficher->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_afficher->Location = System::Drawing::Point(415, 339);
+			this->btn_afficher->Location = System::Drawing::Point(415, 394);
 			this->btn_afficher->Name = L"btn_afficher";
 			this->btn_afficher->Size = System::Drawing::Size(134, 51);
 			this->btn_afficher->TabIndex = 20;
@@ -302,7 +315,7 @@ namespace ProjetG4 {
 			this->btn_supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_supprimer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->btn_supprimer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_supprimer->Location = System::Drawing::Point(596, 339);
+			this->btn_supprimer->Location = System::Drawing::Point(596, 394);
 			this->btn_supprimer->Name = L"btn_supprimer";
 			this->btn_supprimer->Size = System::Drawing::Size(134, 51);
 			this->btn_supprimer->TabIndex = 19;
@@ -315,9 +328,9 @@ namespace ProjetG4 {
 			this->txt_TTC->BackColor = System::Drawing::Color::White;
 			this->txt_TTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_TTC->Location = System::Drawing::Point(655, 283);
+			this->txt_TTC->Location = System::Drawing::Point(688, 338);
 			this->txt_TTC->Name = L"txt_TTC";
-			this->txt_TTC->Size = System::Drawing::Size(253, 34);
+			this->txt_TTC->Size = System::Drawing::Size(314, 34);
 			this->txt_TTC->TabIndex = 35;
 			// 
 			// lbl_qnt
@@ -333,16 +346,6 @@ namespace ProjetG4 {
 			this->lbl_qnt->TabIndex = 34;
 			this->lbl_qnt->Text = L"Quantité";
 			// 
-			// txt_quantite
-			// 
-			this->txt_quantite->BackColor = System::Drawing::Color::White;
-			this->txt_quantite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->txt_quantite->Location = System::Drawing::Point(142, 209);
-			this->txt_quantite->Name = L"txt_quantite";
-			this->txt_quantite->Size = System::Drawing::Size(224, 28);
-			this->txt_quantite->TabIndex = 37;
-			// 
 			// lbl_prixTTC
 			// 
 			this->lbl_prixTTC->AutoSize = true;
@@ -350,7 +353,7 @@ namespace ProjetG4 {
 			this->lbl_prixTTC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lbl_prixTTC->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->lbl_prixTTC->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_prixTTC->Location = System::Drawing::Point(649, 249);
+			this->lbl_prixTTC->Location = System::Drawing::Point(682, 304);
 			this->lbl_prixTTC->Name = L"lbl_prixTTC";
 			this->lbl_prixTTC->Size = System::Drawing::Size(81, 31);
 			this->lbl_prixTTC->TabIndex = 36;
@@ -361,10 +364,11 @@ namespace ProjetG4 {
 			this->txt_PrixHt->BackColor = System::Drawing::Color::White;
 			this->txt_PrixHt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_PrixHt->Location = System::Drawing::Point(50, 283);
+			this->txt_PrixHt->Location = System::Drawing::Point(50, 338);
 			this->txt_PrixHt->Name = L"txt_PrixHt";
 			this->txt_PrixHt->Size = System::Drawing::Size(253, 34);
 			this->txt_PrixHt->TabIndex = 39;
+			this->txt_PrixHt->TextChanged += gcnew System::EventHandler(this, &StockForm::calculTTC);
 			// 
 			// lbl_prixHT
 			// 
@@ -373,7 +377,7 @@ namespace ProjetG4 {
 			this->lbl_prixHT->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lbl_prixHT->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->lbl_prixHT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_prixHT->Location = System::Drawing::Point(44, 249);
+			this->lbl_prixHT->Location = System::Drawing::Point(44, 304);
 			this->lbl_prixHT->Name = L"lbl_prixHT";
 			this->lbl_prixHT->Size = System::Drawing::Size(72, 31);
 			this->lbl_prixHT->TabIndex = 38;
@@ -384,10 +388,11 @@ namespace ProjetG4 {
 			this->txt_TVA->BackColor = System::Drawing::Color::White;
 			this->txt_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_TVA->Location = System::Drawing::Point(352, 283);
+			this->txt_TVA->Location = System::Drawing::Point(352, 338);
 			this->txt_TVA->Name = L"txt_TVA";
-			this->txt_TVA->Size = System::Drawing::Size(253, 34);
+			this->txt_TVA->Size = System::Drawing::Size(269, 34);
 			this->txt_TVA->TabIndex = 41;
+			this->txt_TVA->TextChanged += gcnew System::EventHandler(this, &StockForm::calculTTC);
 			// 
 			// lbl_TVA
 			// 
@@ -396,7 +401,7 @@ namespace ProjetG4 {
 			this->lbl_TVA->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lbl_TVA->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->lbl_TVA->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_TVA->Location = System::Drawing::Point(346, 249);
+			this->lbl_TVA->Location = System::Drawing::Point(346, 304);
 			this->lbl_TVA->Name = L"lbl_TVA";
 			this->lbl_TVA->Size = System::Drawing::Size(43, 31);
 			this->lbl_TVA->TabIndex = 40;
@@ -429,20 +434,55 @@ namespace ProjetG4 {
 			this->lbl_idaffich->TabIndex = 43;
 			this->lbl_idaffich->Text = L"ID s\'affichera ici!";
 			// 
+			// num_qnt
+			// 
+			this->num_qnt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->num_qnt->Location = System::Drawing::Point(143, 214);
+			this->num_qnt->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->num_qnt->Name = L"num_qnt";
+			this->num_qnt->Size = System::Drawing::Size(224, 27);
+			this->num_qnt->TabIndex = 44;
+			// 
+			// num_seuil
+			// 
+			this->num_seuil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->num_seuil->Location = System::Drawing::Point(143, 263);
+			this->num_seuil->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->num_seuil->Name = L"num_seuil";
+			this->num_seuil->Size = System::Drawing::Size(224, 27);
+			this->num_seuil->TabIndex = 45;
+			// 
+			// lbl_seuil
+			// 
+			this->lbl_seuil->AutoSize = true;
+			this->lbl_seuil->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_seuil->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lbl_seuil->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->lbl_seuil->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->lbl_seuil->Location = System::Drawing::Point(46, 258);
+			this->lbl_seuil->Name = L"lbl_seuil";
+			this->lbl_seuil->Size = System::Drawing::Size(51, 31);
+			this->lbl_seuil->TabIndex = 46;
+			this->lbl_seuil->Text = L"Seuil";
+			// 
 			// StockForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(955, 529);
+			this->ClientSize = System::Drawing::Size(1035, 584);
+			this->Controls->Add(this->lbl_seuil);
+			this->Controls->Add(this->num_seuil);
+			this->Controls->Add(this->num_qnt);
 			this->Controls->Add(this->lbl_idaffich);
 			this->Controls->Add(this->lbl_retour);
 			this->Controls->Add(this->txt_TVA);
 			this->Controls->Add(this->lbl_TVA);
 			this->Controls->Add(this->txt_PrixHt);
 			this->Controls->Add(this->lbl_prixHT);
-			this->Controls->Add(this->txt_quantite);
 			this->Controls->Add(this->lbl_prixTTC);
 			this->Controls->Add(this->txt_TTC);
 			this->Controls->Add(this->lbl_qnt);
@@ -450,7 +490,7 @@ namespace ProjetG4 {
 			this->Controls->Add(this->lbl_couleur);
 			this->Controls->Add(this->txt_msg);
 			this->Controls->Add(this->lbl_id);
-			this->Controls->Add(this->btn_enregistrer);
+			this->Controls->Add(this->btn_valider);
 			this->Controls->Add(this->dgViewArticle);
 			this->Controls->Add(this->txt_nom);
 			this->Controls->Add(this->txt_ref);
@@ -463,12 +503,12 @@ namespace ProjetG4 {
 			this->Controls->Add(this->btn_retour);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MaximumSize = System::Drawing::Size(973, 576);
-			this->MinimumSize = System::Drawing::Size(973, 576);
 			this->Name = L"StockForm";
 			this->Text = L"StockForm";
 			this->Load += gcnew System::EventHandler(this, &StockForm::StockForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgViewArticle))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_qnt))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_seuil))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -483,10 +523,15 @@ private: System::Void dgViewArticle_CellContentClick(System::Object^ sender, Sys
 }
 private: System::Void StockForm_Load(System::Object^ sender, System::EventArgs^ e);
 	   //boutons gestion du stock
-private: System::Void btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void btn_valider_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_modifier_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_afficher_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: void calculTTC(System::Object^ sender, System::EventArgs^ e);
+public: 
+	void set_article(Composant::Article^);
+	Composant::Article^ get_article(void);
 };
 }

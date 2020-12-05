@@ -14,7 +14,7 @@ Composant::Article::Article()
 
 void Composant::Article::SetID_article(int ID_article)
 {
-	if(ID_article > 0) this->ID_article = ID_article;
+	this->ID_article = ID_article;
 }
 
 int Composant::Article::getID_article(void)
@@ -22,7 +22,7 @@ int Composant::Article::getID_article(void)
 	return this->ID_article;
 }
 
-void Composant::Article::SetReference_article(String^ Reference_article)
+void Composant::Article::SetReference_article(System::String^ Reference_article)
 {
 	if (Reference_Article != "")
 	{
@@ -30,12 +30,12 @@ void Composant::Article::SetReference_article(String^ Reference_article)
 	}
 }
 
-String^ Composant::Article::getReference_article(void)
+System::String^ Composant::Article::getReference_article(void)
 {
 	return this->Reference_Article;
 }
 
-void Composant::Article::SetDesignation(String^ Designation)
+void Composant::Article::SetDesignation(System::String^ Designation)
 {
 	if (Designation != "")
 	{
@@ -43,7 +43,7 @@ void Composant::Article::SetDesignation(String^ Designation)
 	}
 }
 
-String^ Composant::Article::getDesignation(void)
+System::String^ Composant::Article::getDesignation(void)
 {
 	return this->Designation;
 }
@@ -88,45 +88,45 @@ int Composant::Article::getSeuil_de_reapprovisionnement(void)
 	return this->Seuil_de_reapprovisionnement;
 }
 
-void Composant::Article::SetCouleur(String^ Couleur)
+void Composant::Article::SetCouleur(System::String^ Couleur)
 {
 	this->Couleur = Couleur;
 }
 
-String^ Composant::Article::getCouleur(void)
+System::String^ Composant::Article::getCouleur(void)
 {
 	return this->Couleur;
 }
 
-String^ Composant::Article::SELECT(void)
+System::String^ Composant::Article::SELECT(void)
 {
-	return "SELECT ID_article, Reference_Article, Designation, Prix_HT, Taux_TVA, Quantite_en_Stock, Seuil_de_reapprovisionnement, Couleur FROM Article;";
+	return "SELECT ID_article, Reference_Article, Designation, Prix_HT, Taux_TVA, Quantite_en_Stock, Seuil_de_reapprovisionnement, Couleur, (select prix_ht+ (prix_ht*taux_tva/100) ) as Prix_TTC FROM Article";
 }
 
-String^ Composant::Article::INSERT(void)
+System::String^ Composant::Article::SELECTbyID(void)
 {
-	return "INSERT INTO Article " +
-		"(Reference_Article, Designation, Prix_HT, Taux_TVA, Quantite_en_Stock, Seuil_de_reapprovisionnement, Couleur)" +
-		"VALUES('" + this->getReference_article() + "', '" + this->getDesignation() + "', '" + this->getPrix_HT() + "', '" + this->getTaux_TVA() + "','" + this->getQuantite_en_Stock() + "','" + this->getSeuil_de_reapprovisionnement() + "','" + this->getCouleur() + "');SELECT @@IDENTITY;";
+	return this->SELECT() + " where id_article = " + this->ID_article;
 }
 
-String^ Composant::Article::UPDATE(void)
+System::String^ Composant::Article::INSERT(void)
+{
+	return "INSERT INTO Article (Reference_Article, Designation, Prix_HT, Taux_TVA, Quantite_en_Stock, Seuil_de_reapprovisionnement, Couleur)" +
+		"VALUES('" + this->Reference_Article + "', '" + this->Designation + "'," + this->Prix_HT.ToString()->Replace(",", ".") + ", " + this->Taux_TVA.ToString()->Replace(",", ".") + "," + this->Quantite_en_Stock +
+		"," + this->Seuil_de_reapprovisionnement + ",'" + this->Couleur + "');" + "Select SCOPE_IDENTITY()";
+
+}
+
+System::String^ Composant::Article::UPDATE(void)
 {
 	return "UPDATE Article " +
-		"SET Reference_Article = '" + this->getReference_article() + "', Designation = '" + this->getDesignation() + "', Prix_HT = '" + this->getPrix_HT() + "', Taux_TVA = '" + this->getTaux_TVA() + "', Quantite_en_Stock = '" + this->getQuantite_en_Stock() + "', Seuil_de_reapprovisionnement = '" + this->getSeuil_de_reapprovisionnement() + "', Couleur = '" + this->getCouleur() + "' " +
+		"SET Reference_Article = '" + this->getReference_article() + "', Designation = '" + this->getDesignation() + "', Prix_HT = " + this->getPrix_HT().ToString()->Replace(",", ".") + ", Taux_TVA = " + this->getTaux_TVA().ToString()->Replace(",", ".") + ", Quantite_en_Stock = " + this->getQuantite_en_Stock() + ", Seuil_de_reapprovisionnement = " + this->getSeuil_de_reapprovisionnement() + ", Couleur = '" + this->getCouleur() + "' " +
 		"WHERE(ID_article = " + this->getID_article() + ");";
 }
 
-String^ Composant::Article::DELETE(void)
+System::String^ Composant::Article::DELETE(void)
 {
 	return "DELETE FROM Article " +
 		"WHERE(ID_article = " + this->getID_article() + ");";
-}
-
-String^ Composant::Article::SELECTbyID(void)
-{
-	
-	return "SELECT ID_article, Reference_Article, Designation, Prix_HT, Taux_TVA, Quantite_en_Stock, Seuil_de_reapprovisionnement, Couleur FROM Article WHERE(ID_article = " + this->getID_article() + ");";
 }
 
 Composant::Article::~Article()

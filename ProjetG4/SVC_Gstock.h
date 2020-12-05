@@ -14,12 +14,11 @@ namespace Service {
 		DataTable^ dt;
 	public:
 		SVC_Gstock();
+		Composant::Article^ get_article();
 		DataTable^ listestock();
 		void afficher(int);
-		void ajouter(String^ Reference_Article, String^ Designation, float Prix_HT, float Taux_TVA, int Quantite_en_Stock, int Seuil, String^ Couleur);
-		void modifier(int id, String^ Reference_Article, String^ Designation, float Prix_HT, float Taux_TVA, int Quantite_en_Stock, int Seuil, String^ Couleur);
+		void ajouter(String^,String^ ,float, float, int, int, String^);
+		void modifier(int, String^, String^, float, float, int, int, String^);
 		void supprimer(int);
 	};
 }
-
-

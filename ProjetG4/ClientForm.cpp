@@ -2,9 +2,6 @@
 
 System::Void ProjetG4::ClientForm::ClientForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->dgViewClient->DataSource = this->gclient->listeclients();//afficher la liste des clients dans le datagridview
-	this->msg_txt->Text = "Bienvenue à la Gestion du client \n Pour créer un client, veuillez remplir les champs puis cliquez sur le bouton Créer"
-		+ "\n Pour modifier un client, selectionnez depuis la table, cliquez afficher, remplissez les champs et enfin cliquez sur le bouton modifier"
-		+ "\nPour modifier un client, selectionnez depuis la table etcliquez sur le bouton supprimer";
 }
 
 System::Void ProjetG4::ClientForm::btn_afficher_Click(System::Object^ sender, System::EventArgs^ e)

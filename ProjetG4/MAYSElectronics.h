@@ -146,7 +146,7 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(955, 529);
+			this->ClientSize = System::Drawing::Size(973, 576);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
@@ -154,6 +154,7 @@ namespace ProjetG4 {
 			this->Controls->Add(this->button1);
 			this->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->DoubleBuffered = true;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(973, 576);
 			this->MinimumSize = System::Drawing::Size(973, 576);
