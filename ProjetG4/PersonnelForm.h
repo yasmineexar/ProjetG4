@@ -56,7 +56,8 @@ namespace ProjetG4 {
 	private: System::Windows::Forms::TextBox^ txtbox_nom;
 	private: System::Windows::Forms::DataGridView^ dgviewDB;
 	private: System::Windows::Forms::Button^ btn_retour;
-	private: System::Windows::Forms::Button^ btn_enregistrer;
+	private: System::Windows::Forms::Button^ btn_valider;
+
 	private: System::Windows::Forms::Label^ lbl_id;
 	private: System::Windows::Forms::TextBox^ txtbox_prenom;
 	private: System::Windows::Forms::TextBox^ txt_msg;
@@ -95,6 +96,7 @@ namespace ProjetG4 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PersonnelForm::typeid));
 			this->btn_supprimer = (gcnew System::Windows::Forms::Button());
 			this->btn_afficher = (gcnew System::Windows::Forms::Button());
@@ -105,7 +107,7 @@ namespace ProjetG4 {
 			this->txtbox_nom = (gcnew System::Windows::Forms::TextBox());
 			this->dgviewDB = (gcnew System::Windows::Forms::DataGridView());
 			this->btn_retour = (gcnew System::Windows::Forms::Button());
-			this->btn_enregistrer = (gcnew System::Windows::Forms::Button());
+			this->btn_valider = (gcnew System::Windows::Forms::Button());
 			this->lbl_id = (gcnew System::Windows::Forms::Label());
 			this->txtbox_prenom = (gcnew System::Windows::Forms::TextBox());
 			this->txt_msg = (gcnew System::Windows::Forms::TextBox());
@@ -227,11 +229,23 @@ namespace ProjetG4 {
 			this->dgviewDB->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgviewDB->Location = System::Drawing::Point(401, 69);
 			this->dgviewDB->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dgviewDB->MultiSelect = false;
 			this->dgviewDB->Name = L"dgviewDB";
+			this->dgviewDB->ReadOnly = true;
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgviewDB->RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this->dgviewDB->RowHeadersVisible = false;
 			this->dgviewDB->RowHeadersWidth = 51;
 			this->dgviewDB->RowTemplate->Height = 24;
 			this->dgviewDB->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dgviewDB->Size = System::Drawing::Size(493, 232);
+			this->dgviewDB->Size = System::Drawing::Size(539, 232);
 			this->dgviewDB->TabIndex = 9;
 			// 
 			// btn_retour
@@ -250,20 +264,20 @@ namespace ProjetG4 {
 			this->btn_retour->UseVisualStyleBackColor = false;
 			this->btn_retour->Click += gcnew System::EventHandler(this, &PersonnelForm::btn_retour_Click);
 			// 
-			// btn_enregistrer
+			// btn_valider
 			// 
-			this->btn_enregistrer->BackColor = System::Drawing::Color::Transparent;
-			this->btn_enregistrer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_enregistrer->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
-			this->btn_enregistrer->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_enregistrer->Location = System::Drawing::Point(761, 407);
-			this->btn_enregistrer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btn_enregistrer->Name = L"btn_enregistrer";
-			this->btn_enregistrer->Size = System::Drawing::Size(133, 50);
-			this->btn_enregistrer->TabIndex = 13;
-			this->btn_enregistrer->Text = L"Enregistrer";
-			this->btn_enregistrer->UseVisualStyleBackColor = false;
-			this->btn_enregistrer->Click += gcnew System::EventHandler(this, &PersonnelForm::btn_enregistrer_Click);
+			this->btn_valider->BackColor = System::Drawing::Color::Transparent;
+			this->btn_valider->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_valider->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
+			this->btn_valider->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_valider->Location = System::Drawing::Point(761, 407);
+			this->btn_valider->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btn_valider->Name = L"btn_valider";
+			this->btn_valider->Size = System::Drawing::Size(179, 50);
+			this->btn_valider->TabIndex = 13;
+			this->btn_valider->Text = L"Valider";
+			this->btn_valider->UseVisualStyleBackColor = false;
+			this->btn_valider->Click += gcnew System::EventHandler(this, &PersonnelForm::btn_enregistrer_Click);
 			// 
 			// lbl_id
 			// 
@@ -309,7 +323,7 @@ namespace ProjetG4 {
 			this->txtbox_adr->Location = System::Drawing::Point(480, 354);
 			this->txtbox_adr->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtbox_adr->Name = L"txtbox_adr";
-			this->txtbox_adr->Size = System::Drawing::Size(224, 34);
+			this->txtbox_adr->Size = System::Drawing::Size(235, 34);
 			this->txtbox_adr->TabIndex = 18;
 			// 
 			// lbl_adresse
@@ -319,7 +333,7 @@ namespace ProjetG4 {
 			this->lbl_adresse->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lbl_adresse->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->lbl_adresse->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_adresse->Location = System::Drawing::Point(394, 354);
+			this->lbl_adresse->Location = System::Drawing::Point(395, 354);
 			this->lbl_adresse->Name = L"lbl_adresse";
 			this->lbl_adresse->Size = System::Drawing::Size(78, 31);
 			this->lbl_adresse->TabIndex = 17;
@@ -359,7 +373,7 @@ namespace ProjetG4 {
 			this->lbl_ville->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->lbl_ville->Font = (gcnew System::Drawing::Font(L"Agency FB", 13.8F, System::Drawing::FontStyle::Bold));
 			this->lbl_ville->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_ville->Location = System::Drawing::Point(725, 354);
+			this->lbl_ville->Location = System::Drawing::Point(755, 354);
 			this->lbl_ville->Name = L"lbl_ville";
 			this->lbl_ville->Size = System::Drawing::Size(44, 31);
 			this->lbl_ville->TabIndex = 23;
@@ -416,9 +430,9 @@ namespace ProjetG4 {
 			this->boxville->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->boxville->FormattingEnabled = true;
-			this->boxville->Location = System::Drawing::Point(775, 354);
+			this->boxville->Location = System::Drawing::Point(810, 354);
 			this->boxville->Name = L"boxville";
-			this->boxville->Size = System::Drawing::Size(119, 33);
+			this->boxville->Size = System::Drawing::Size(130, 33);
 			this->boxville->TabIndex = 29;
 			// 
 			// comboBox1
@@ -437,7 +451,7 @@ namespace ProjetG4 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(955, 601);
+			this->ClientSize = System::Drawing::Size(977, 601);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->boxville);
 			this->Controls->Add(this->checkBox1);
@@ -452,7 +466,7 @@ namespace ProjetG4 {
 			this->Controls->Add(this->txt_msg);
 			this->Controls->Add(this->txtbox_prenom);
 			this->Controls->Add(this->lbl_id);
-			this->Controls->Add(this->btn_enregistrer);
+			this->Controls->Add(this->btn_valider);
 			this->Controls->Add(this->dgviewDB);
 			this->Controls->Add(this->txtbox_nom);
 			this->Controls->Add(this->lbl_prenom);
@@ -465,8 +479,10 @@ namespace ProjetG4 {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(995, 648);
+			this->MinimumSize = System::Drawing::Size(995, 648);
 			this->Name = L"PersonnelForm";
-			this->Text = L"PersonnelForm";
+			this->Text = L"Gestion Personnel";
 			this->Load += gcnew System::EventHandler(this, &PersonnelForm::PersonnelForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgviewDB))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
