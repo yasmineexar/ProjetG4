@@ -35,22 +35,34 @@ System::Void ProjetG4::PersonnelForm::btn_afficher_Click(System::Object^ sender,
 	DateTime^ date = gpersonnel->personnel->get_date_embauche();
 	this->dateTimePicker1->Value = DateTime(date->Year, date->Month, date->Day);
 	this->txtbox_adr->Text = this->gpersonnel->adresse->getAdresse();
-	this->boxville->SelectedIndex = gpersonnel->ville->getIdVille();
+	this->boxville->SelectedValue = gpersonnel->ville->getIdVille();
 	PersonnelForm_Load(sender, e);
 	//chiraz heba hlawa
 }
 
 System::Void ProjetG4::PersonnelForm::btn_creer_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//ajout d'un nouvel employé sans superviseur
-	this->gpersonnel->ajouter(txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text);
+	if (checkBox1->Checked) {
+		
+		this->gpersonnel->ajouter(txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text, Convert::ToInt32(comboBox1->SelectedValue));
+	}
+	else {
+		//ajout d'un nouvel employé sans superviseur
+		this->gpersonnel->ajouter(txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text);
+	}
 	PersonnelForm_Load(sender, e);
 }
 
 System::Void ProjetG4::PersonnelForm::btn_modifier_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//modifier un employé
-	this->gpersonnel->modifier(Convert::ToInt32(lbl_idaffich->Text),txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text);
+	if (checkBox1->Checked) {
+		//modifier un employé avec superieur
+		this->gpersonnel->modifier(Convert::ToInt32(lbl_idaffich->Text), txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text, Convert::ToInt32(comboBox1->SelectedValue));
+	}
+	else {
+		//modifier un employé
+		this->gpersonnel->modifier(Convert::ToInt32(lbl_idaffich->Text), txtbox_nom->Text, txtbox_prenom->Text, dateTimePicker1->Value, txtbox_adr->Text, boxville->Text);
+	}
 	PersonnelForm_Load(sender, e);
 	
 }
@@ -58,7 +70,11 @@ System::Void ProjetG4::PersonnelForm::btn_modifier_Click(System::Object^ sender,
 System::Void ProjetG4::PersonnelForm::btn_supprimer_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	//supprimer un employé
-	this->gpersonnel->supprimer(Convert::ToInt32(dgviewDB->SelectedRows[0]->Cells[0]->Value));
-	PersonnelForm_Load(sender, e);
+	gpersonnel->afficher(Convert::ToInt32(dgviewDB->SelectedRows[0]->Cells[0]->Value));
+	System::Windows::Forms::DialogResult r = MessageBox::Show("etes vous sur de vouloir supprimer l'employe " + this->gpersonnel->personnel->get_nom() + " " + this->gpersonnel->personnel->get_prenom() + "?", "Suppression d'un employe", MessageBoxButtons::OKCancel);
+	if (r == System::Windows::Forms::DialogResult::OK) {
+		this->gpersonnel->supprimer(Convert::ToInt32(dgviewDB->SelectedRows[0]->Cells[0]->Value));
+		PersonnelForm_Load(sender, e);
+	}
 }
 

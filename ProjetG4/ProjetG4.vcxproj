@@ -130,6 +130,8 @@
     <ClCompile Include="ClientForm.cpp" />
     <ClCompile Include="CommandeForm.cpp" />
     <ClCompile Include="FicheCommande.cpp" />
+    <ClCompile Include="Listearticle.cpp" />
+    <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="PersonnelForm.cpp" />
     <ClCompile Include="StatistiqueForm.cpp" />
     <ClCompile Include="StockForm.cpp" />
@@ -161,6 +163,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FicheCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Listearticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PersonnelForm.h">
@@ -198,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicheCommande.resx">
       <DependentUpon>FicheCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listearticle.resx">
+      <DependentUpon>Listearticle.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm1.resx">
+      <DependentUpon>MyForm1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonnelForm.resx">
       <DependentUpon>PersonnelForm.h</DependentUpon>

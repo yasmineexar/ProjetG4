@@ -96,7 +96,7 @@ namespace ProjetG4 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PersonnelForm::typeid));
 			this->btn_supprimer = (gcnew System::Windows::Forms::Button());
 			this->btn_afficher = (gcnew System::Windows::Forms::Button());
@@ -232,15 +232,15 @@ namespace ProjetG4 {
 			this->dgviewDB->MultiSelect = false;
 			this->dgviewDB->Name = L"dgviewDB";
 			this->dgviewDB->ReadOnly = true;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgviewDB->RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgviewDB->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this->dgviewDB->RowHeadersVisible = false;
 			this->dgviewDB->RowHeadersWidth = 51;
 			this->dgviewDB->RowTemplate->Height = 24;
@@ -311,6 +311,7 @@ namespace ProjetG4 {
 			this->txt_msg->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_msg->Multiline = true;
 			this->txt_msg->Name = L"txt_msg";
+			this->txt_msg->ReadOnly = true;
 			this->txt_msg->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->txt_msg->Size = System::Drawing::Size(675, 83);
 			this->txt_msg->TabIndex = 16;
