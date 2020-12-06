@@ -166,6 +166,7 @@
     <ClInclude Include="PersonnelForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="StatistiqueForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -210,6 +211,12 @@
     <EmbeddedResource Include="MAYSElectronics.resx">
       <DependentUpon>MAYSElectronics.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ProjetG4.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\logo.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

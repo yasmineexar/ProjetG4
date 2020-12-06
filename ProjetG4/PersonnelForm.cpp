@@ -17,8 +17,8 @@ System::Void ProjetG4::PersonnelForm::PersonnelForm_Load(System::Object^ sender,
 	this->comboBox1->DisplayMember = "Employe";
 	//combobox ville
 	this->boxville->DataSource = this->gpersonnel->liste_ville();
-	this->boxville->DisplayMember = "Nom_Ville";
 	this->boxville->ValueMember = "Id_Ville";
+	this->boxville->DisplayMember = "Nom_Ville";
 }
 
 System::Void ProjetG4::PersonnelForm::btn_enregistrer_Click(System::Object^ sender, System::EventArgs^ e)
@@ -35,7 +35,7 @@ System::Void ProjetG4::PersonnelForm::btn_afficher_Click(System::Object^ sender,
 	DateTime^ date = gpersonnel->personnel->get_date_embauche();
 	this->dateTimePicker1->Value = DateTime(date->Year, date->Month, date->Day);
 	this->txtbox_adr->Text = this->gpersonnel->adresse->getAdresse();
-	this->boxville->SelectedIndex = boxville->FindString(gpersonnel->ville->getNomVille());
+	this->boxville->SelectedIndex = gpersonnel->ville->getIdVille();
 	PersonnelForm_Load(sender, e);
 	//chiraz heba hlawa
 }

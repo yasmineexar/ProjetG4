@@ -6,8 +6,6 @@ namespace Composant
 		this->Id_Commande = -1;
 		this->Quantité_Article = -1;
 		this->Remise = 0;
-		this->prix_ht = 0;
-		this->tva = 0;
 	}
 	String^ Choisir::SELECT(void)
 	{
@@ -17,7 +15,7 @@ namespace Composant
 	String^ Choisir::INSERT(void)
 	{
 		return "INSERT INTO Choisir (ID_Article,ID_Commande,Quantite_Article,Remise,prix_ht,tva) " +
-			"VALUES(" + this->Id_Article + "," + this->Id_Commande + "," + this->Quantité_Article + "," + this->Remise + "," + this->prix_ht + "," + this->tva + ")";
+			"VALUES(" + this->Id_Article + "," + this->Id_Commande + "," + this->Quantité_Article + "," + this->Remise.ToString()->Replace(",", ".") + "," + this->prix_ht.ToString()->Replace(",", ".") + "," + this->tva.ToString()->Replace(",", ".") + ")";
 	}
 	String^ Choisir::UPDATE(void)
 	{
